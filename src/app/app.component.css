@@ -1,10 +1,11 @@
+
 .container{
     display: grid;
     grid-template-rows: 2fr 5fr 1fr;
     grid-template-columns: 1fr 5fr 1fr;
-   background: rgba(127, 81, 173, 0.705);
     border-style: double;
-    
+    margin-top: 40px;
+    background: rgb(74, 107, 158);
 }
 
 .mainDiv{
@@ -12,31 +13,32 @@
     grid-column: 2;
 
     display: grid;
-    grid-template-rows: 1fr 5fr;
-    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 2fr 5fr;
+    grid-template-columns: 2fr 6fr;
+   
 }
 
 .photoDiv{
     grid-row: 1;
     grid-column: 1;
-    background: red;
+    background: rgb(19, 18, 2);
 
 }
 
 .titleDiv{
     grid-row: 1;
     grid-column: 2;
-    background: blue;
+    background: rgb(10, 10, 49);
     
 }
 
 .menuDiv{
     grid-row: 2;
     grid-column: 1;
-    background:yellow;
+    background:rgba(43, 138, 228, 0.925);
 
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 4fr 1fr;
     grid-row-gap: 10px;
 }
@@ -56,10 +58,15 @@
     grid-column: 2;
 }
 
+.b4{
+    grid-row: 5;
+    grid-column: 2;
+}
+
 .contentDiv{
     grid-row: 2;
     grid-column: 2;
-    background: violet;
+    background: rgb(107, 124, 202);
     
 }
 
