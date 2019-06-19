@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {SiteService} from './siteService';
-import { timingSafeEqual } from 'crypto';
+
 
 @Component({
   selector: 'app-root',
@@ -30,6 +30,8 @@ export class AppComponent {
     this.currentMonth = this.allMonth[Number(timeData.currentDateTime.substring(5,7))];
     this.currentDay = timeData.currentDateTime.substring(8,10);
     this.currentYear = timeData.currentDateTime.substring(0,4);
+
+    this.siteService.GetWeatherInfo();
      
     });
 }

@@ -22,4 +22,12 @@ export class SiteService{
 
     }
 
+    GetWeatherInfo()
+    {
+        this.http.get<TimeDateModel>('http://api.openweathermap.org/data/2.5/weather?q=London').subscribe(
+            data=>{console.log(data);
+            
+            });
+    }
+
 }
