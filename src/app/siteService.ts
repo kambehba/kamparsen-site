@@ -6,17 +6,19 @@ import {Subject} from 'rxjs';
 @Injectable()
 export class SiteService{
 
-    public currentDate : Subject<string>;
+    public timeDateModel : Subject<TimeDateModel>;
 
-    constructor(private http:HttpClient, private timeDateModel: TimeDateModel ){
-        this.currentDate = new Subject<string>();
+    constructor(private http:HttpClient){
+        this.timeDateModel = new Subject<TimeDateModel>();
 
     }
 
     GetDateTimeInfo()
     {
         this.http.get<TimeDateModel>('http://worldclockapi.com/api/json/est/now').subscribe(
-            data=>{this.currentDate.next(data.currentDateTime);});
+            data=>{this.timeDateModel.next(data);
+            
+            });
 
     }
 
