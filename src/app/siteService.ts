@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {TimeDateModel} from './TimeDateModel';
+import {DateTimeModel} from './DateTimeModel';
 import {Subject} from 'rxjs';
 
 @Injectable()
 export class SiteService{
 
-    public timeDateModel : Subject<TimeDateModel>;
+    public timeDateModel : Subject<DateTimeModel>;
 
     constructor(private http:HttpClient){
-        this.timeDateModel = new Subject<TimeDateModel>();
+        this.timeDateModel = new Subject<DateTimeModel>();
 
     }
 
     GetDateTimeInfo()
     {
-        this.http.get<TimeDateModel>('http://worldclockapi.com/api/json/est/now').subscribe(
+        this.http.get<DateTimeModel>('http://worldclockapi.com/api/json/est/now').subscribe(
             data=>{this.timeDateModel.next(data);
             
             });
@@ -24,7 +24,7 @@ export class SiteService{
 
     GetWeatherInfo()
     {
-        this.http.get<TimeDateModel>('http://api.openweathermap.org/data/2.5/weather?q=London').subscribe(
+        this.http.get<DateTimeModel>('http://api.openweathermap.org/data/2.5/weather?q=London').subscribe(
             data=>{console.log(data);
             
             }); //kghjhg
