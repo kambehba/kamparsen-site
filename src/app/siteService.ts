@@ -20,7 +20,7 @@ export class SiteService{
     {
         this.http.get<DateTimeModel>('http://worldclockapi.com/api/json/est/now').subscribe(
             data=>{this.timeDateModel.next(data);
-            
+            console.log(data.currentDateTime);
             });
 
     }

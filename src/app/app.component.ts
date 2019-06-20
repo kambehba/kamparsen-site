@@ -16,6 +16,7 @@ export class AppComponent {
   private currentDay : string;
   private currentYear : string;
   private currentTemp : number;
+  private currentTime : string;
 
   private allMonth : string[] = ["Jan","Feb","March","April","May","June","July","Aug","Sep","Oct","Nov","Dec"];
 
@@ -31,6 +32,7 @@ export class AppComponent {
     this.currentMonth = this.allMonth[Number(timeData.currentDateTime.substring(5,7))];
     this.currentDay = timeData.currentDateTime.substring(8,10);
     this.currentYear = timeData.currentDateTime.substring(0,4);
+    this.currentTime = timeData.currentDateTime.substring(11,16);
 
     this.siteService.GetWeatherInfo();
      
