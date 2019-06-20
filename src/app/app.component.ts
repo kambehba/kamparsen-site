@@ -15,6 +15,7 @@ export class AppComponent {
   private currentMonth : string;
   private currentDay : string;
   private currentYear : string;
+  private currentTemp : number;
 
   private allMonth : string[] = ["Jan","Feb","March","April","May","June","July","Aug","Sep","Oct","Nov","Dec"];
 
@@ -34,6 +35,15 @@ export class AppComponent {
     this.siteService.GetWeatherInfo();
      
     });
+
+    this.siteService.weatherModel.subscribe(weatherData=>{
+      this.currentTemp = Math.floor(this.ConvertKelvinToFarenhite(weatherData.main.temp));
+    });
+}
+
+
+ConvertKelvinToFarenhite(params:number) : number{
+  return (params-273.15) * 1.8 + 32;
 }
 
 
