@@ -1,8 +1,4 @@
-/* body{
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    
-} */
+
 
 *{
     box-sizing: border-box;
@@ -14,7 +10,15 @@
     display: grid;
     width: 100vw;
     height: 100vh;
+  
+    background: #000428;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+   
 }
+
+
 
 aside{
     display: grid;
@@ -157,9 +161,9 @@ main{
     grid-template-rows: 80px 40px 40px 40px 100px 40px 700px 100px;
     grid-template-areas: 
     "b4 b5 b6 b7 b8 empty1"
-    "companyLogo companyLogo company company company company"
-    "companyLogo companyLogo title title title title"
-    "companyLogo companyLogo role role role role"
+    "companyLogo company company company company company"
+    "companyLogo title title title title title"
+    "companyLogo role role role role role"
     "empty3 empty3 empty3 empty3 empty3 empty3"
     "empty4 empty4 prevBtn nextBtn empty5 empty5"
     "empty empty main main main main"
@@ -191,8 +195,9 @@ main{
 
 .companyLogo{
     grid-area: companyLogo;
-    width: 60%;
+    width: 100%;
     height: auto;
+    margin-top: 2rem;
 
    
    
@@ -257,6 +262,36 @@ main{
     z-index: 5;
     margin-top: 2rem;
     margin-left: 2rem;
+}
+
+.skills{
+    display: grid;
+    grid-template-columns: minmax(60px,1fr) minmax(60px,1fr) minmax(60px,1fr) minmax(60px,1fr) minmax(60px,1fr) minmax(120px,1fr);
+    grid-template-rows: 80px 40px 40px 40px 100px 40px 700px 100px;
+    grid-template-areas: 
+    "empty b9 b10 b11 empty1 empty1"
+    "skillLogo1 skillLogo1 skillLogo1 skillLogo1 skillLogo1 skillLogo1"
+    "empty3 empty3 empty3 empty3 empty3 empty3"
+    "empty3 empty3 empty3 empty3 empty3 empty3"
+    "empty3 empty3 empty3 empty3 empty3 empty3"
+    "empty3 empty3 empty3 empty3 empty3 empty3"
+    "empty3 empty3 empty3 empty3 empty3 empty3"
+    "footer footer footer footer footer footer";
+  
+    grid-column-gap: 1rem;
+    height: 100vh;
+}
+
+.b9{
+    grid-area: b9;
+}
+
+.b10{
+    grid-area: b10;
+}
+
+.b11{
+    grid-area: b11;
 }
 
 

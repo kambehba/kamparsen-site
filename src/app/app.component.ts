@@ -28,6 +28,9 @@ export class AppComponent {
 
   private show1999: boolean;
   private show2002: boolean;
+  private show2008: boolean;
+  private show2010: boolean;
+  private show2013: boolean;
 
   private showAbout: boolean;
   private showEducation: boolean;
@@ -36,8 +39,12 @@ export class AppComponent {
   private showInterests: boolean;
   private showContact: boolean;
 
+  private showDesktopSkills: boolean;
+  private showWebSkills: boolean;
+  private showFirmwareSkills: boolean;
+
   private companyLogo: string;
-  private honeywellLogo: string;
+  
 
   private currentCamozziImageIndex : number
 
@@ -58,8 +65,9 @@ export class AppComponent {
       this.currentTime = timeData.currentDateTime.substring(11, 16);
 
       this.siteService.GetWeatherInfo();
+      this.hideAllSkills();
 
-      this.show1999 = false;
+      this.hideAllExperinces();
       this.currentCamozziImageIndex = 0;
 
     });
@@ -88,7 +96,7 @@ export class AppComponent {
 
 
   Show1999() {
-    this.show2002 = false;
+    this.hideAllExperinces();
     this.show1999 = true;
 
     this.company = "CAMOZZI , Pneumatic and Automation";
@@ -101,13 +109,46 @@ export class AppComponent {
   }
 
   Show2002() {
-    this.show1999 = false;
+    this.hideAllExperinces();
     this.show2002 = true;
 
-    this.company = "Honeywell , Pneumatic and Automation";
-    this.honeywellLogo = "../assets/honeywellLogo.png";
-    this.jobtitle = "Electrical and Automation  Engineer";
-    this.responsibalities = "Electrical Panel design , PLC programming , Robotics and Automation."
+    this.company = "Honeywell";
+    this.companyLogo = "../assets/honeywellLogo.png";
+    this.jobtitle = "Electrical , BMS, BAS  Engineer";
+    this.responsibalities = "Smart Building design for HVAC systems. "
+
+  }
+
+  Show2008() {
+    this.hideAllExperinces();
+    this.show2008 = true;
+
+    this.company = "Raytheon";
+    this.companyLogo = "../assets/raytheonLogo.jpg";
+    this.jobtitle = "Software Engineer";
+    this.responsibalities = "Design and Impelemenation of Mission Managment System "
+
+  }
+
+  Show2010() {
+    this.hideAllExperinces();
+    this.show2010 = true;
+
+    this.company = "ESPN";
+    this.companyLogo = "../assets/espnLogo.png";
+    this.jobtitle = "Software Engineer";
+    this.responsibalities = "Design and Impelemenation of Mission Managment System "
+
+  }
+
+  Show2013() {
+    this.hideAllExperinces();
+    this.show2013 = true;
+
+    this.company = "Nova Techhologies";
+    this.companyLogo = "../assets/novaLogo.jpg";
+    this.jobtitle = "Software Engineer";
+    this.responsibalities = "Software Design and Impelemenation , CALL FOR FIRE (CFFT III) Trainer";
 
   }
 
@@ -149,6 +190,7 @@ export class AppComponent {
 
   loadSkills(){
     this.hideAllSections();
+    this.hideAllExperinces();
     this.showSkills = true;
     
   }
@@ -173,6 +215,37 @@ export class AppComponent {
     this.showInterests = false;
     this.showContact = false;
   
+  }
+
+  hideAllExperinces(){
+    this.show1999 = false;
+    this.show2002 = false;
+    this.show2008 = false;
+    this.show2010 = false;
+  }
+
+  hideAllSkills(){
+    this.showDesktopSkills = false;
+    this.showWebSkills = false;
+    this.showFirmwareSkills = false;
+    
+  
+  }
+
+  ShowDesktopSkills(){
+    this.hideAllSkills();
+    this.showDesktopSkills = true;
+
+  }
+
+  ShowWebSkills(){
+    this.showWebSkills = true;
+    
+  }
+
+  ShowFirmwareSkills(){
+    this.showFirmwareSkills = true;
+    
   }
 
 

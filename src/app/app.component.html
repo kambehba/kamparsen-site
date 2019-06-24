@@ -19,6 +19,7 @@
     <main>
         <section class="main-area">
 
+            <!-- about starts -->
             <section class="about" *ngIf="showAbout">
                 <header>
                     <h1 class="display-3 text-uppercase">Kam
@@ -37,7 +38,8 @@
                 </article>
             </section>
             <!-- about ends -->
-
+            
+            <!-- education starts -->
             <section class="education" *ngIf="showEducation">
                 <header>
                     <h1 class="display-3 text-uppercase">Purdue
@@ -60,9 +62,9 @@
             <section class="experince" *ngIf="showExperience">
                     <button class="b b4 btn-success" (click)="Show1999()">1999-2002</button>
                     <button class="b b5 btn-info" (click)="Show2002()">2002-2004</button>
-                    <button class="b b6 btn-warning" (click)="ShowMasterDegree()">2008-2010</button>
-                    <button class="b b7 btn-primary" (click)="ShowMasterDegree()">2010-2013</button>
-                    <button class="b b8 btn-danger" (click)="ShowMasterDegree()">2013-2019</button>
+                    <button class="b b6 btn-warning" (click)="Show2008()">2008-2010</button>
+                    <button class="b b7 btn-primary" (click)="Show2010()">2010-2013</button>
+                    <button class="b b8 btn-danger" (click)="Show2013()">2013-2019</button>
 
                     <button *ngIf="show1999" class="prevBtn btn-primary" (click)="prevImage()">Prev</button>
                     <button *ngIf="show1999" class="nextBtn btn-primary" (click)="nextImage()">Next</button>
@@ -74,14 +76,46 @@
                     <div *ngIf="show1999" class="role">Responsibalities: <span>{{responsibalities}}</span> </div>
                     <img *ngIf="show1999" class="img2" src={{camozziImage}}>
 
-                    <img *ngIf="show2002" class="companyLogo" src={{honeywellLogo}}>
+                    <img *ngIf="show2002" class="companyLogo" src={{companyLogo}}>
                     <div *ngIf="show2002" class="company">Company: <span>{{company}}</span> </div>
                     <div *ngIf="show2002" class="title" >Title: <span>{{jobtitle}}</span> </div>
                     <div *ngIf="show2002" class="role">Responsibalities: <span>{{responsibalities}}</span> </div>
-                    <!-- <img *ngIf="show2002" class="img2" src={{educationImage}}> -->
+
+                    <img *ngIf="show2008" class="companyLogo" src={{companyLogo}}>
+                    <div *ngIf="show2008" class="company">Company: <span>{{company}}</span> </div>
+                    <div *ngIf="show2008" class="title" >Title: <span>{{jobtitle}}</span> </div>
+                    <div *ngIf="show2008" class="role">Responsibalities: <span>{{responsibalities}}</span> </div>
+
+                    <img *ngIf="show2010" class="companyLogo" src={{companyLogo}}>
+                    <div *ngIf="show2010" class="company">Company: <span>{{company}}</span> </div>
+                    <div *ngIf="show2010" class="title" >Title: <span>{{jobtitle}}</span> </div>
+                    <div *ngIf="show2010" class="role">Responsibalities: <span>{{responsibalities}}</span> </div>
+
+                    <img *ngIf="show2013" class="companyLogo" src={{companyLogo}}>
+                    <div *ngIf="show2013" class="company">Company: <span>{{company}}</span> </div>
+                    <div *ngIf="show2013" class="title" >Title: <span>{{jobtitle}}</span> </div>
+                    <div *ngIf="show2013" class="role">Responsibalities: <span>{{responsibalities}}</span> </div>
+                   
 
             </section>
             <!-- experince ends -->
+
+             <!-- skills starts -->
+             <section class="skills" *ngIf="showSkills">
+                    <button class="b b9 btn-primary" (click)="ShowDesktopSkills()">DESKTOP</button>
+                    <button class="b b10 btn-danger" (click)="ShowWebSkills()">WEB</button>
+                    <button class="b b11 btn-warning" (click)="ShowFirmwareSkills()">HARDWARE</button>
+
+                    <div *ngIf="ShowDesktopSkills">DESKTOP</div>
+                    <div *ngIf="ShowWebSkills">WEB</div>
+                    <div *ngIf="ShowFirmwareSkills">FIRMWARE</div>
+                   
+
+                    
+                   
+
+            </section>
+            <!-- skills ends -->
 
 
 
