@@ -7,19 +7,19 @@
             <span> Temp: {{currentTemp}} F</span> </p>
         <img class="myPhoto" src="../assets/kamparsen.jpg" alt="Italian Trulli">
         <nav class="nav">
-            <a href="#about">About</a>
-            <a href="#education">Education</a>
-            <a href="#experince">Experience</a>
-            <a href="#skills">Skills</a>
-            <a href="#interests">Interest</a>
-            <a href="#contact">Contact</a>
+            <button class="navBtn btn-success" (click)="loadAbout()">About</button>
+            <button class="navBtn btn-success" (click)="loadEducation()">Education</button>
+            <button class="navBtn btn-success" (click)="loadExperience()">Experience</button>
+            <button class="navBtn btn-success" (click)="loadSkills()">Skills</button>
+            <button class="navBtn btn-success" (click)="loadInterests()">Interests</button>
+            <button class="navBtn btn-success" (click)="loadContact()">Contact</button>
         </nav>
     </aside>
 
     <main>
         <section class="main-area">
 
-            <section class="about" id="about">
+            <section class="about" *ngIf="showAbout">
                 <header>
                     <h1 class="display-3 text-uppercase">Kam
                         <span class="text-success">Parsen</span>
@@ -38,7 +38,7 @@
             </section>
             <!-- about ends -->
 
-            <section class="education" id="education">
+            <section class="education" *ngIf="showEducation">
                 <header>
                     <h1 class="display-3 text-uppercase">Purdue
                         <span class="text-success">Univeristy</span>
@@ -57,13 +57,17 @@
 
 
             <!-- experince starts -->
-            <section class="experince" id="experince">
+            <section class="experince" *ngIf="showExperience">
                     <button class="b b4 btn-success" (click)="Show1999()">1999-2002</button>
                     <button class="b b5 btn-info" (click)="Show2002()">2002-2004</button>
                     <button class="b b6 btn-warning" (click)="ShowMasterDegree()">2008-2010</button>
                     <button class="b b7 btn-primary" (click)="ShowMasterDegree()">2010-2013</button>
                     <button class="b b8 btn-danger" (click)="ShowMasterDegree()">2013-2019</button>
 
+                    <button *ngIf="show1999" class="prevBtn btn-primary" (click)="prevImage()">Prev</button>
+                    <button *ngIf="show1999" class="nextBtn btn-primary" (click)="nextImage()">Next</button>
+                  
+                  
                     <img *ngIf="show1999" class="companyLogo" src={{companyLogo}}>
                     <div *ngIf="show1999" class="company">Company: <span>{{company}}</span> </div>
                     <div *ngIf="show1999" class="title" >Title: <span>{{jobtitle}}</span> </div>
