@@ -1,122 +1,236 @@
+/* body{
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    
+} */
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
 
 .container{
     display: grid;
-    grid-template-rows: 2fr 5fr 1fr;
-    grid-template-columns: 1fr 5fr 1fr;
-    border-style: double;
-    margin-top: 40px;
-    background: rgb(66, 107, 85);
+    width: 100vw;
+    height: 100vh;
 }
 
-.mainDiv{
-    grid-row: 2;
-    grid-column: 2;
-
+aside{
     display: grid;
-    grid-template-rows: 2fr 5fr;
-    grid-template-columns: 2fr 6fr;
-   
-}
-
-.portrait {
-    height: 200px;
-    width: 200px;
-}
-
-.photoDiv{
-    display: grid;
-    grid-template-rows:  minmax(min-content, 3fr) 1fr;
-    grid-row: 1;
     grid-column: 1;
-    background: rgb(16, 107, 56);
+    align-content: center;
+    height: 100vh;
+    position: fixed;
+    width: 300px;
+    background: #a8c0ff;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3f2b96, #a8c0ff);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3f2b96, #a8c0ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
-.photoDiv_1{
-    grid-row: 1;
-   
+.date{
+    color: wheat;
+    align-content:center;
+    margin-bottom: 3rem;
+    margin-left: 1rem;
+    font-size: large;
 
 }
 
+.myPhoto{
+    width: 70%;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: 2px solid wheat;
+    box-shadow: 0 10px 20px rgb(54, 52, 52)
+}
 
-.titleDiv{
+.nav{
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    margin-top: 2rem;
+}
+
+.nav a{
+    font-size: 110%;
+    color: wheat;
+    margin-bottom: 1rem;
+    transition:all 0.6s;
+}
+
+.nav a:hover{
+    text-decoration: none;
+    transform: scale(1.4);
+}
+
+main{
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-column-gap: 1rem;
+}
+
+.main-area{
+    grid-column: 2/3;
+}
+
+.about{
+    display: grid;
+    align-content: center;
+    height: 100vh;
+
+}
+
+.about article{
+    margin-top: 1rem;
+
+}
+
+.education{
+    display: grid;
+    height: 100vh;
+}
+
+.educationGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 600px 100px;
+    grid-template-areas: 
+    "b1 b2 b3"
+    "main main main"
+    "footer footer footer";
+    grid-column-gap: 1rem;
+}
+
+.g1{
+    width: 400px;
+    grid-row: 2;
+    align-content: center;
+}
+
+.buttonrow{
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
     grid-row: 1;
-    grid-column: 2;
-    background: rgb(13, 75, 37);
     
 }
 
-.titleDiv-1{
-    grid-row: 1;
-    color:rgb(241, 252, 241);
-    font-family: 'Times New Roman', Times, serif;
-    font-size: x-large;
-    text-align: center;
-    margin-top: 20px;  
-
-}
-
-.titleDiv-2{
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-row: 2;
-    background-color: rgba(39, 129, 3, 0.904);
-}
-
-.titleDiv-2-1{
-    grid-column: 1;
-    color: wheat;
-    font-weight: bold;
-    margin-left: 20px;
-    margin-top: 10px;
-}
-
-.titleDiv-2-2{
-    grid-column: 2;
-    color: wheat;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.menuDiv{
-    grid-row: 2;
-    grid-column: 1;
-    background:rgba(1, 46, 3, 0.925);
-
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 4fr 1fr;
-    grid-row-gap: 10px;
-}
-
-.contentDiv{
-    grid-row: 2;
-    grid-column: 2;
-    background: rgb(2, 90, 24);
-    
+.b{
+    margin-top: 2rem;
 }
 
 .b1{
-    grid-row: 2;
-    grid-column: 2;
+    grid-area: b1;
 }
 
 .b2{
-    grid-row: 3;
-    grid-column: 2;
+    grid-area: b2;
 }
 
 .b3{
-    grid-row: 4;
-    grid-column: 2;
+    grid-area: b3;
+}
+
+.img1{
+   grid-area: main;
+   width: 100%;
+   height: auto;
+   margin-top: 1rem;
+
+}
+
+.degreeInfo{
+    grid-area: ff;
+    width: 100%;
+    height: auto;
+}
+
+.experince{
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 300px 200px;
+    grid-template-rows: 80px 40px 40px 40px 700px 100px;
+    grid-template-areas: 
+    "b4 b5 b6 b7 b8 empty1"
+    "companyLogo companyLogo company company company company"
+    "companyLogo companyLogo title title title title"
+    "companyLogo companyLogo role role role role"
+    "empty empty main main main main"
+    "footer footer footer footer footer footer";
+  
+    grid-column-gap: 1rem;
+    height: 100vh;
 }
 
 .b4{
-    grid-row: 5;
-    grid-column: 2;
+    grid-area: b4;
 }
+
+.b5{
+    grid-area: b5;
+}
+
+.b6{
+    grid-area: b6;
+}
+
+.b7{
+    grid-area: b7;
+}
+
+.b8{
+    grid-area: b8;
+}
+
+.companyLogo{
+    grid-area: companyLogo;
+   
+   
+}
+
+.img2{
+    grid-area: main;
+    width: 60%;
+    height: auto;
+    margin-top: 8rem;
+ 
+ }
+
+ .company{
+     grid-area: company;
+     color: rgb(39, 49, 141);
+     font-weight: bold;
+     width: 100%;
+     margin-left: 2rem;
+     margin-top: 4rem;
+   
+ }
+
+ .experince span{
+     color: rgb(168, 155, 182);
+ }
+
+ .title{
+    grid-area: title;
+    color: rgb(39, 49, 141);
+    font-weight: bold;
+    margin-left: 2rem;
+    margin-top: 4rem;
+   
+}
+
+.role{
+    grid-area: role;
+    color: rgb(39, 49, 141);
+    font-weight: bold;
+    margin-left: 2rem;
+    margin-top: 4rem;
+   
+}
+
+
+
+
+
 
 
 

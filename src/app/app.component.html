@@ -1,49 +1,98 @@
 <div class="container">
 
-  <div class="mainDiv">
+    <aside>
+        <br>
+        <p class="date">Today is {{currentWeekDay}}, {{currentMonth}}-{{currentDay}}, {{currentYear}}
+            <br><br><span> Orlando Florida</span> <br><br>
+            <span> Temp: {{currentTemp}} F</span> </p>
+        <img class="myPhoto" src="../assets/kamparsen.jpg" alt="Italian Trulli">
+        <nav class="nav">
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#experince">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#interests">Interest</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </aside>
 
-      <div class="photoDiv">
-          <div class="photoDiv_1">
-                <img class="portrait" src="../assets/kamparsen.jpg" alt="Italian Trulli">
-          </div>
-            
-      </div>
-    
-      <div class="titleDiv">
-        <div class="titleDiv-1"><p>Welcome</p></div>
-        <div class="titleDiv-2"> 
-            <div class="titleDiv-2-1"> 
-                <p>Today is {{currentWeekDay}}, {{currentMonth}}-{{currentDay}}, {{currentYear}}</p>
-                <p>Orlando Time: {{currentTime}}</p>
-            </div>
-            <div class="titleDiv-2-2">
-                <p>Orlando Florida</p>
-                <p>Temp: {{currentTemp}} F</p>
-                 
-            </div>
-        </div>
-      
-    </div>
-    
-      <div class="menuDiv">
-          <button class="b1 btn-success">About Me</button>
-          <button class="b2 btn-success">Education</button>
-          <button class="b3 btn-success">Courier</button>
-          <button class="b4 btn-success">Projects</button>
-      </div>
-    
-      <div class="contentDiv">
-        
-      </div>
+    <main>
+        <section class="main-area">
 
-  </div>
-  
- 
+            <section class="about" id="about">
+                <header>
+                    <h1 class="display-3 text-uppercase">Kam
+                        <span class="text-success">Parsen</span>
+                    </h1>
+                </header>
+                <article class="info text-muted">
+                    I live in beautiful city of Orlando in sunshine state.
+                    I am married to a wonderful woman and we have two boys together.
+                    I have been doing Electrical, Electronic, Firmware and Software Engineering for two decades.
+                    I have worked on vast variety of projects from factory Automation with PLCs to Web Application
+                    written with AngualrJS .
+                    Software and Embedded systems are more than a job to me . I also do this on my spear time as a
+                    hoppey.
 
- 
+                </article>
+            </section>
+            <!-- about ends -->
 
+            <section class="education" id="education">
+                <header>
+                    <h1 class="display-3 text-uppercase">Purdue
+                        <span class="text-success">Univeristy</span>
+                    </h1>
+                </header>
+
+                <div class="educationGrid">
+                    <button class="b b1 btn-success" (click)="ShowBachelorDegree()">Bachelor Degree</button>
+                    <button class="b b2 btn-warning" (click)="ShowSeniorDesign()">Senior Design</button>
+                    <button class="b b3 btn-danger" (click)="ShowMasterDegree()">Master Degree</button>
+                    <img class="img1" src={{educationImage}}>
+                   
+                </div>
+            </section>
+            <!-- education ends -->
+
+
+            <!-- experince starts -->
+            <section class="experince" id="experince">
+                    <button class="b b4 btn-success" (click)="Show1999()">1999-2002</button>
+                    <button class="b b5 btn-info" (click)="Show2002()">2002-2004</button>
+                    <button class="b b6 btn-warning" (click)="ShowMasterDegree()">2008-2010</button>
+                    <button class="b b7 btn-primary" (click)="ShowMasterDegree()">2010-2013</button>
+                    <button class="b b8 btn-danger" (click)="ShowMasterDegree()">2013-2019</button>
+
+                    <img *ngIf="show1999" class="companyLogo" src={{companyLogo}}>
+                    <div *ngIf="show1999" class="company">Company: <span>{{company}}</span> </div>
+                    <div *ngIf="show1999" class="title" >Title: <span>{{jobtitle}}</span> </div>
+                    <div *ngIf="show1999" class="role">Responsibalities: <span>{{responsibalities}}</span> </div>
+                    <img *ngIf="show1999" class="img2" src={{camozziImage}}>
+
+                    <img *ngIf="show2002" class="companyLogo" src={{honeywellLogo}}>
+                    <div *ngIf="show2002" class="company">Company: <span>{{company}}</span> </div>
+                    <div *ngIf="show2002" class="title" >Title: <span>{{jobtitle}}</span> </div>
+                    <div *ngIf="show2002" class="role">Responsibalities: <span>{{responsibalities}}</span> </div>
+                    <!-- <img *ngIf="show2002" class="img2" src={{educationImage}}> -->
+
+            </section>
+            <!-- experince ends -->
+
+
+
+
+
+
+
+
+
+
+        </section>
+        <!-- main area ends -->
+
+    </main>
 
 
 
 </div>
-<!--End of Container -->
