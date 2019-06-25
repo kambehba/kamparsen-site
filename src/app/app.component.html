@@ -26,12 +26,12 @@
                         <span class="text-success">Parsen</span>
                     </h1>
                 </header>
-                <article class="info text-muted">
-                    I live in beautiful city of Orlando in sunshine state.
-                    I am married to a wonderful woman and we have two boys together.
-                    I have been doing Electrical, Electronic, Firmware and Software Engineering for two decades.
+                <article class="aboutText text-muted">
+                    I live in beautiful city of Orlando in sunshine state.<br>
+                    I am married to a wonderful woman and we have two boys together.<br>
+                    I have been doing Electrical, Electronic, Firmware and Software Engineering for two decades.<br>
                     I have worked on vast variety of projects from factory Automation with PLCs to Web Application
-                    written with AngualrJS .
+                    written with AngualrJS .<br>
                     Software and Embedded systems are more than a job to me . I also do this on my spear time as a
                     hoppey.
 
@@ -106,13 +106,31 @@
                     <button class="b b10 btn-danger" (click)="ShowWebSkills()">WEB</button>
                     <button class="b b11 btn-warning" (click)="ShowFirmwareSkills()">HARDWARE</button>
 
-                    <div *ngIf="ShowDesktopSkills">DESKTOP</div>
-                    <div *ngIf="ShowWebSkills">WEB</div>
-                    <div *ngIf="ShowFirmwareSkills">FIRMWARE</div>
-                   
+                    <header class="t1">
+                        <h1 class="display-5 text-uppercase text-danger">Programingm
+                            <span class="text-success">Languages:</span>
+                        </h1>
+                    </header>
+                    <img src="../assets/cplus.jpg" *ngIf="ShowDesktopSkills" class="desktopSkill1">
+                    <img src="../assets/csharp.jpg" *ngIf="ShowDesktopSkills" class="desktopSkill2">
 
+                    <header class="t2">
+                        <h1 class="display-5 text-uppercase text-danger">Markup
+                            <span class="text-success">Languages:</span>
+                        </h1>
+                    </header>
+                    <img src="../assets/xaml.jpg" *ngIf="ShowDesktopSkills" class="desktopSkill3">
+                    <img src="../assets/xml.jpg" *ngIf="ShowDesktopSkills" class="desktopSkill4">
+
+                    <header class="t3">
+                        <h1 class="display-5 text-uppercase text-danger">Frameworks
+                            <span class="text-success">Libraries:</span>
+                        </h1>
+                    </header>
+                    <img src="../assets/wpf.jpg" *ngIf="ShowDesktopSkills" class="desktopSkill5">
+                    <img src="../assets/wcf.jpg" *ngIf="ShowDesktopSkills" class="desktopSkill6">
                     
-                   
+                       
 
             </section>
             <!-- skills ends -->
