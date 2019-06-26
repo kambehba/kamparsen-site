@@ -191,7 +191,9 @@ export class AppComponent {
   loadSkills(){
     this.hideAllSections();
     this.hideAllExperinces();
+    this.hideAllSkills();
     this.showSkills = true;
+    this.showDesktopSkills = true;
     
   }
 
@@ -239,11 +241,13 @@ export class AppComponent {
   }
 
   ShowWebSkills(){
+    this.hideAllSkills();
     this.showWebSkills = true;
     
   }
 
   ShowFirmwareSkills(){
+    this.hideAllSkills();
     this.showFirmwareSkills = true;
     
   }

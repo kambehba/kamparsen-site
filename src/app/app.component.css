@@ -88,6 +88,7 @@ main{
     display: grid;
     align-content: center;
     height: 100vh;
+    margin-left: 2rem;
 
 }
 
@@ -100,6 +101,7 @@ main{
 .education{
     display: grid;
     height: 100vh;
+    margin-left: 2rem;
 }
 
 .educationGrid{
@@ -164,7 +166,7 @@ main{
 
 .experince{
     display: grid;
-    /* grid-template-columns: 100px 100px 100px 100px 300px 200px; */
+    margin-left: 2rem;
     grid-template-columns: minmax(60px,200px) minmax(60px,200px) minmax(60px,200px) minmax(60px,200px) minmax(60px,200px) minmax(120px,200px);
     grid-template-rows: 80px 40px 40px 40px 100px 40px 700px 100px;
     grid-template-areas: 
@@ -275,19 +277,19 @@ main{
 
 .skills{
     display: grid;
-    grid-template-columns: minmax(60px,1fr) minmax(40px,100px) minmax(40px,100px) minmax(60px,1fr) minmax(60px,1fr) minmax(120px,1fr);
-    grid-template-rows: 60px 60px 60px 40px 100px 40px 700px 100px;
+    /* grid-template-columns: minmax(60px,100px) minmax(40px,100px) minmax(40px,100px) minmax(60px,100px) minmax(60px,1fr) minmax(120px,1fr); */
+    grid-template-columns: 30px 100px 100px 100px repeat(10,auto);
+    grid-template-rows: repeat(9,auto);
     grid-template-areas: 
-    "e b9 b10 b11 e1 e1"
-    "t1 t1 t1 t1 t1 e2"
-    "e3 desktopSkill1 desktopSkill2 e4 e4 e4"
-    "t2 t2 t2 t2 t2 e5"
-    "e6 desktopSkill3 desktopSkill4 e7 e7 e7"
-    "t3 t3 t3 t3 t3 e8"
-    "e9 desktopSkill5 desktopSkill6 e10 e10 e10"
-    "footer footer footer footer footer footer";
-  
-    grid-column-gap: 1rem;
+    "e b9 b10 b11 e1 e1 e1 e1 e1 e1 e1 e1 e1 e1"
+    "t1 t1 t1 t1 t1 e2 desktopSkill1 desktopSkill2 desktopSkill3 e3 e3 e3 e3 e3"
+    "t2 t2 t2 t2 t2 e4 desktopSkill4 desktopSkill5 e5 e5 e5 e5 e5 e5"
+    "t3 t3 t3 t3 t3 e6 desktopSkill6 desktopSkill7 desktopSkill8 e7 e7 e7 e7 e7"
+    "t4 t4 t4 t4 t4 e8 desktopSkill9 desktopSkill10 desktopSkill11 e9 e9 e9 e9 e9";
+    /* "t2 t2 desktopSkill4 desktopSkill5 e3 e3 e3 e3 e3 e3"
+    "t3 t3 desktopSkill6 desktopSkill7 desktopSkill8 e4 e4 e4 e4 e4"
+    "t4 t4 desktopSkill9 desktopSkill10 desktopSkill11 e5 e5 e5 e5 e5"; */
+   
     height: 100vh;
 }
 
@@ -303,7 +305,7 @@ main{
 
 .b9:hover{
     border: rgb(231, 222, 240) 4px solid;
-    transform: scale(1.4);
+    transform: scale(1.1);
 
 }
 
@@ -319,7 +321,7 @@ main{
 
 .b10:hover{
     border: rgb(238, 234, 241) 4px solid;
-    transform: scale(1.4);
+    transform: scale(1.1);
 
 }
 
@@ -335,78 +337,90 @@ main{
 
 .b11:hover{
     border: rgb(249, 246, 252) 4px solid;
-    transform: scale(1.4);
+    transform: scale(1.1);
 
 }
 
 .t1{
     grid-area: t1;
     margin-left: 2rem;
-    margin-top: 2rem;
+   
 }
 
 .t2{
     grid-area: t2;
     margin-left: 2rem;
-    margin-top: 5rem;
+  
 }
 
 .t3{
     grid-area: t3;
     margin-left: 2rem;
-    margin-top: 5rem;
+   
 }
+
+.t4{
+    grid-area: t4;
+    margin-left: 2rem;
+  
+}
+
 
 .desktopSkill1{
     grid-area: desktopSkill1;
-    height: auto;
-    margin-top: 2rem;
+   
 }
 
 .desktopSkill2{
     grid-area: desktopSkill2;
-    height: auto;
-    height: 77px;
-    margin-top: 2rem;
-   
+    
 }
 
 .desktopSkill3{
     grid-area: desktopSkill3;
-    width: 30%;
-    height: auto;
-    margin-top: 6rem;
+    
 }
 
 .desktopSkill4{
     grid-area: desktopSkill4;
-    width: 30%;
-    height: auto;
-    margin-top: 6rem;
-    margin-left: 2rem;
-    border: rgb(245, 63, 18) solid 2px;
-
+   
 }
 
 .desktopSkill5{
     grid-area: desktopSkill5;
-    width: 30%;
-    height: auto;
-    margin-top: 6rem;
-    margin-left: 5rem;
-    border: rgb(245, 63, 18) solid 2px;
-
+  
 }
 
 .desktopSkill6{
     grid-area: desktopSkill6;
-    width: 50%;
-    height: auto;
-    margin-top: 6rem;
-    margin-left: 4rem;
-    border: rgb(245, 63, 18) solid 2px;
-
+   
 }
+
+.desktopSkill7{
+    grid-area: desktopSkill7;
+ 
+}
+
+.desktopSkill8{
+    grid-area: desktopSkill8;
+  
+}
+
+.desktopSkill9{
+    grid-area: desktopSkill9;
+   
+}
+
+.desktopSkill10{
+    grid-area: desktopSkill10;
+  
+}
+
+.desktopSkill11{
+    grid-area: desktopSkill11;
+  
+}
+
 
 
 

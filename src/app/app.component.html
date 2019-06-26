@@ -106,39 +106,58 @@
                     <button class="b b10 btn-danger" (click)="ShowWebSkills()">WEB</button>
                     <button class="b b11 btn-warning" (click)="ShowFirmwareSkills()">HARDWARE</button>
 
-                    <header class="t1">
-                        <h1 class="display-5 text-uppercase text-danger">Programingm
+                    <header *ngIf="showDesktopSkills" class="t1">
+                        <h1 class="display-5 text-uppercase text-danger">Programing
                             <span class="text-success">Languages:</span>
                         </h1>
                     </header>
-                    <h3 *ngIf="ShowDesktopSkills" class="display-5 text-uppercase text-white desktopSkill1">C++</h3>
-                    <h3 *ngIf="ShowDesktopSkills" class="display-5 text-uppercase text-white desktopSkill2">C#</h3>
+                    <h3 *ngIf="showDesktopSkills" class="display-5 text-uppercase text-white desktopSkill1">C</h3>
+                    <h3 *ngIf="showDesktopSkills" class="display-5 text-uppercase text-white desktopSkill2">C++</h3>
+                    <h3 *ngIf="showDesktopSkills" class="display-5 text-uppercase text-white desktopSkill3">C#</h3>
 
-                    <header class="t2">
-                        <h1 class="display-5 text-uppercase text-primary">Markup
+                    <header *ngIf="showDesktopSkills" class="t2">
+                        <h1 class="display-5 text-uppercase text-danger">Markup
                             <span class="text-success">Languages:</span>
                         </h1>
                     </header>
-                    <img src="../assets/xaml.jpg" *ngIf="ShowDesktopSkills" class="desktopSkill3">
-                    <img src="../assets/xml.jpg" *ngIf="ShowDesktopSkills" class="desktopSkill4">
+                    <h3 *ngIf="showDesktopSkills" class="display-5 text-uppercase text-white desktopSkill4">XAML</h3>
+                    <h3 *ngIf="showDesktopSkills" class="display-5 text-uppercase text-white desktopSkill5">XML</h3>
 
-                    <header class="t3">
+                    <header *ngIf="showDesktopSkills" class="t3">
                         <h1 class="display-5 text-uppercase text-danger">Frameworks
                             <span class="text-success">Libraries:</span>
                         </h1>
                     </header>
-                    <img src="../assets/wpf.jpg" *ngIf="ShowDesktopSkills" class="desktopSkill5">
-                    <img src="../assets/wcf.jpg" *ngIf="ShowDesktopSkills" class="desktopSkill6">
-                    
-                       
+                    <h3 *ngIf="showDesktopSkills" class="display-5 text-uppercase text-white desktopSkill6">WPF</h3>
+                    <h3 *ngIf="showDesktopSkills" class="display-5 text-uppercase text-white desktopSkill7">WCF</h3>
+                    <h3 *ngIf="showDesktopSkills" class="display-5 text-uppercase text-white desktopSkill8">PRISM</h3>
+
+                    <header *ngIf="showDesktopSkills" class="t4">
+                        <h1 class="display-5 text-uppercase text-danger">Design
+                            <span class="text-success">Patterns:</span>
+                        </h1>
+                    </header>
+                    <h3 *ngIf="showDesktopSkills" class="display-5 text-uppercase text-white desktopSkill9">MVVM</h3>
+                    <h3 *ngIf="showDesktopSkills" class="display-5 text-uppercase text-white desktopSkill10">Dependency<br> Injection</h3>
+                    <h3 *ngIf="showDesktopSkills" class="display-5 text-uppercase text-white desktopSkill11">Command</h3>
+
+                    <header *ngIf="showWebSkills" class="t1">
+                        <h1 class="display-5 text-uppercase text-danger">Programing
+                            <span class="text-success">Languages:</span>
+                        </h1>
+                    </header>
+                    <h3 *ngIf="showWebSkills" class="display-5 text-uppercase text-white desktopSkill1">Java Script ,  Phyton</h3>
+
+                    <header *ngIf="showWebSkills" class="t2">
+                        <h1 class="display-5 text-uppercase text-danger">Markup-
+                            <span class="text-success">Data Structuer:</span>
+                        </h1>
+                    </header>
+                    <h3 *ngIf="showWebSkills" class="display-5 text-uppercase text-white desktopSkill4">HTML , JSON </h3>
+                   
 
             </section>
             <!-- skills ends -->
-
-
-
-
-
 
 
 
