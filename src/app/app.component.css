@@ -94,7 +94,8 @@ main{
 
 .aboutText{
     margin: 2rem;
-    font-weight: bold;
+    font-size: xx-large;
+    color: #ecedf0;
     
 }
 
@@ -167,17 +168,16 @@ main{
 .experince{
     display: grid;
     margin-left: 2rem;
-    grid-template-columns: minmax(60px,200px) minmax(60px,200px) minmax(60px,200px) minmax(60px,200px) minmax(60px,200px) minmax(120px,200px);
-    grid-template-rows: 80px 40px 40px 40px 100px 40px 700px 100px;
+    grid-template-columns: minmax(auto,100px) minmax(auto,100px) minmax(auto,100px) minmax(auto,100px) minmax(auto,auto) minmax(120px,auto);
+    grid-template-rows: minmax(40px,auto) minmax(40px,auto) minmax(40px,auto) minmax(40px,auto) 100px 200px minmax(auto,200px) minmax(auto,200px);
     grid-template-areas: 
     "b4 b5 b6 b7 b8 empty1"
     "companyLogo company company company company company"
     "companyLogo title title title title title"
     "companyLogo role role role role role"
-    "empty3 empty3 empty3 empty3 empty3 empty3"
-    "empty4 empty4 prevBtn nextBtn empty5 empty5"
+    "companyLogo empty4 prevBtn nextBtn empty5 empty5"
     "empty empty main main main main"
-    "footer footer footer footer footer footer";
+    "footer footer main main main main";
   
     grid-column-gap: 1rem;
     height: 100vh;
@@ -210,48 +210,50 @@ main{
     height: auto;
     margin-top: 2rem;
 
-   
-   
 }
 
 .img2{
     grid-area: main;
-    width: 60%;
-    height: auto;
-    margin-top: 2rem;
+   
     border: rgb(226, 153, 17) solid 5px;
+    margin-top: 1rem;
+    object-fit:cover;
+    width: 400px;
+    height: 337px;
  
  }
 
  .company{
      grid-area: company;
-     color: rgb(39, 49, 141);
+     color: rgb(240, 241, 245);
      font-weight: bold;
      width: 100%;
      margin-left: 2rem;
-     margin-top: 4rem;
+     margin-top: 2rem;
    
  }
 
+ 
+
  .experince span{
-     color: rgb(168, 155, 182);
+     color: rgb(41, 247, 34);
  }
 
  .title{
     grid-area: title;
-    color: rgb(39, 49, 141);
+    color: rgb(243, 243, 247);
     font-weight: bold;
     margin-left: 2rem;
-    margin-top: 4rem;
+    margin-top: 2rem;
    
 }
 
 .role{
     grid-area: role;
-    color: rgb(39, 49, 141);
+    color: rgb(249, 249, 250);
     font-weight: bold;
     margin-left: 2rem;
-    margin-top: 4rem;
+    margin-top: 2rem;
    
 }
 
@@ -260,7 +262,7 @@ main{
     width: 70px;
     height: 30px;
     z-index: 5;
-    margin-top: 2rem;
+    margin-top: 3rem;
     margin-left: 2rem;
     
    
@@ -271,7 +273,7 @@ main{
     width: 70px;
     height: 30px;
     z-index: 5;
-    margin-top: 2rem;
+    margin-top: 3rem;
     margin-left: 2rem;
 }
 
@@ -282,15 +284,17 @@ main{
     grid-template-rows: repeat(9,auto);
     grid-template-areas: 
     "e b9 b10 b11 e1 e1 e1 e1 e1 e1 e1 e1 e1 e1"
-    "t1 t1 t1 t1 t1 e2 desktopSkill1 desktopSkill2 desktopSkill3 e3 e3 e3 e3 e3"
-    "t2 t2 t2 t2 t2 e4 desktopSkill4 desktopSkill5 e5 e5 e5 e5 e5 e5"
-    "t3 t3 t3 t3 t3 e6 desktopSkill6 desktopSkill7 desktopSkill8 e7 e7 e7 e7 e7"
-    "t4 t4 t4 t4 t4 e8 desktopSkill9 desktopSkill10 desktopSkill11 e9 e9 e9 e9 e9";
-    /* "t2 t2 desktopSkill4 desktopSkill5 e3 e3 e3 e3 e3 e3"
-    "t3 t3 desktopSkill6 desktopSkill7 desktopSkill8 e4 e4 e4 e4 e4"
-    "t4 t4 desktopSkill9 desktopSkill10 desktopSkill11 e5 e5 e5 e5 e5"; */
+    "t1 t1 t1 t1 t1 e2 e2 e2 e2 e2 e2 e2 e2 e2"
+    "t2 t2 t2 t2 t2 e4 e4 e4 e4 e4 e4 e4 e4 e4"
+    "t3 t3 t3 t3 t3 e6 e6 e6 e6 e6 e6 e6 e6 e6"
+    "t4 t4 t4 t4 t4 e8 e8 e8 e8 e8 e8 e8 e8 e8";
+   
    
     height: 100vh;
+}
+
+.skills span{
+    font-size:xx-large;
 }
 
 .b9{
@@ -364,74 +368,6 @@ main{
     margin-left: 2rem;
   
 }
-
-
-.desktopSkill1{
-    grid-area: desktopSkill1;
-   
-}
-
-.desktopSkill2{
-    grid-area: desktopSkill2;
-    
-}
-
-.desktopSkill3{
-    grid-area: desktopSkill3;
-    
-}
-
-.desktopSkill4{
-    grid-area: desktopSkill4;
-   
-}
-
-.desktopSkill5{
-    grid-area: desktopSkill5;
-  
-}
-
-.desktopSkill6{
-    grid-area: desktopSkill6;
-   
-}
-
-.desktopSkill7{
-    grid-area: desktopSkill7;
- 
-}
-
-.desktopSkill8{
-    grid-area: desktopSkill8;
-  
-}
-
-.desktopSkill9{
-    grid-area: desktopSkill9;
-   
-}
-
-.desktopSkill10{
-    grid-area: desktopSkill10;
-  
-}
-
-.desktopSkill11{
-    grid-area: desktopSkill11;
-  
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

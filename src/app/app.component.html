@@ -26,19 +26,17 @@
                         <span class="text-success">Parsen</span>
                     </h1>
                 </header>
-                <article class="aboutText text-muted">
-                    I live in beautiful city of Orlando in sunshine state.<br>
-                    I am married to a wonderful woman and we have two boys together.<br>
-                    I have been doing Electrical, Electronic, Firmware and Software Engineering for two decades.<br>
-                    I have worked on vast variety of projects from factory Automation with PLCs to Web Application
-                    written with AngualrJS .<br>
-                    Software and Embedded systems are more than a job to me . I also do this on my spear time as a
-                    hoppey.
-
+                <article class="aboutText">
+                    Thank you for visiting my site !<br/>
+                    I am problem solver who does Engineering not only <br/>
+                    to make a living but also for fun.<br/><br/>
+                    I started my carrier back in 1999 by falling in love with Automation and programming PLCs.<br/>
+                    Since then I have worked in veraity of projects from embeded systems to web application.<br>
+                    
                 </article>
             </section>
             <!-- about ends -->
-            
+
             <!-- education starts -->
             <section class="education" *ngIf="showEducation">
                 <header>
@@ -52,7 +50,7 @@
                     <button class="b b2 btn-warning" (click)="ShowSeniorDesign()">Senior Design</button>
                     <button class="b b3 btn-danger" (click)="ShowMasterDegree()">Master Degree</button>
                     <img class="img1" src={{educationImage}}>
-                   
+
                 </div>
             </section>
             <!-- education ends -->
@@ -60,101 +58,115 @@
 
             <!-- experince starts -->
             <section class="experince" *ngIf="showExperience">
-                    <button class="b b4 btn-success" (click)="Show1999()">1999-2002</button>
-                    <button class="b b5 btn-info" (click)="Show2002()">2002-2004</button>
-                    <button class="b b6 btn-warning" (click)="Show2008()">2008-2010</button>
-                    <button class="b b7 btn-primary" (click)="Show2010()">2010-2013</button>
-                    <button class="b b8 btn-danger" (click)="Show2013()">2013-2019</button>
+                <button class="b b4 btn-success" (click)="Show1999()">1999-2002</button>
+                <button class="b b5 btn-info" (click)="Show2002()">2002-2004</button>
+                <button class="b b6 btn-warning" (click)="Show2008()">2008-2010</button>
+                <button class="b b7 btn-primary" (click)="Show2010()">2010-2013</button>
+                <button class="b b8 btn-danger" (click)="Show2013()">2013-2019</button>
 
-                    <button *ngIf="show1999" class="prevBtn btn-primary" (click)="prevImage()">Prev</button>
-                    <button *ngIf="show1999" class="nextBtn btn-primary" (click)="nextImage()">Next</button>
-                  
-                  
-                    <img *ngIf="show1999" class="companyLogo" src={{companyLogo}}>
-                    <div *ngIf="show1999" class="company">Company: <span>{{company}}</span> </div>
-                    <div *ngIf="show1999" class="title" >Title: <span>{{jobtitle}}</span> </div>
-                    <div *ngIf="show1999" class="role">Responsibalities: <span>{{responsibalities}}</span> </div>
-                    <img *ngIf="show1999" class="img2" src={{camozziImage}}>
+                <button *ngIf="show1999 || show2010 || show2013" class="prevBtn btn-primary"
+                    (click)="prevImage()">Prev</button>
+                <button *ngIf="show1999 || show2010 || show2013" class="nextBtn btn-primary"
+                    (click)="nextImage()">Next</button>
 
-                    <img *ngIf="show2002" class="companyLogo" src={{companyLogo}}>
-                    <div *ngIf="show2002" class="company">Company: <span>{{company}}</span> </div>
-                    <div *ngIf="show2002" class="title" >Title: <span>{{jobtitle}}</span> </div>
-                    <div *ngIf="show2002" class="role">Responsibalities: <span>{{responsibalities}}</span> </div>
 
-                    <img *ngIf="show2008" class="companyLogo" src={{companyLogo}}>
-                    <div *ngIf="show2008" class="company">Company: <span>{{company}}</span> </div>
-                    <div *ngIf="show2008" class="title" >Title: <span>{{jobtitle}}</span> </div>
-                    <div *ngIf="show2008" class="role">Responsibalities: <span>{{responsibalities}}</span> </div>
 
-                    <img *ngIf="show2010" class="companyLogo" src={{companyLogo}}>
-                    <div *ngIf="show2010" class="company">Company: <span>{{company}}</span> </div>
-                    <div *ngIf="show2010" class="title" >Title: <span>{{jobtitle}}</span> </div>
-                    <div *ngIf="show2010" class="role">Responsibalities: <span>{{responsibalities}}</span> </div>
+                <img *ngIf="show1999" class="companyLogo" src={{companyLogo}}>
+                <div *ngIf="show1999" class="company">Company: <span>{{company}}</span> </div>
+                <div *ngIf="show1999" class="title">Title: <span>{{jobtitle}}</span> </div>
+                <div *ngIf="show1999" class="role">Responsibalities: <span>{{responsibalities}}</span> </div>
+                <img *ngIf="show1999" class="img2" src={{camozziImage}}>
 
-                    <img *ngIf="show2013" class="companyLogo" src={{companyLogo}}>
-                    <div *ngIf="show2013" class="company">Company: <span>{{company}}</span> </div>
-                    <div *ngIf="show2013" class="title" >Title: <span>{{jobtitle}}</span> </div>
-                    <div *ngIf="show2013" class="role">Responsibalities: <span>{{responsibalities}}</span> </div>
-                   
+                <img *ngIf="show2002" class="companyLogo" src={{companyLogo}}>
+                <div *ngIf="show2002" class="company">Company: <span>{{company}}</span> </div>
+                <div *ngIf="show2002" class="title">Title: <span>{{jobtitle}}</span> </div>
+                <div *ngIf="show2002" class="role">Responsibalities: <span>{{responsibalities}}</span> </div>
+
+                <img *ngIf="show2008" class="companyLogo" src={{companyLogo}}>
+                <div *ngIf="show2008" class="company">Company: <span>{{company}}</span> </div>
+                <div *ngIf="show2008" class="title">Title: <span>{{jobtitle}}</span> </div>
+                <div *ngIf="show2008" class="role">Responsibalities: <span>{{responsibalities}}</span> </div>
+                <img *ngIf="show2008" class="img2" src={{raytheonImage}}>
+
+                <img *ngIf="show2010" class="companyLogo" src={{companyLogo}}>
+                <div *ngIf="show2010" class="company">Company: <span>{{company}}</span> </div>
+                <div *ngIf="show2010" class="title">Title: <span>{{jobtitle}}</span> </div>
+                <div *ngIf="show2010" class="role">Responsibalities: <span>{{responsibalities}}</span> </div>
+                <img *ngIf="show2010" class="img2" src={{espnImage}}>
+
+                <img *ngIf="show2013" class="companyLogo" src={{companyLogo}}>
+                <div *ngIf="show2013" class="company">Company: <span>{{company}}</span> </div>
+                <div *ngIf="show2013" class="title">Title: <span>{{jobtitle}}</span> </div>
+                <div *ngIf="show2013" class="role">Responsibalities: <span>{{responsibalities}}</span> </div>
+                <img *ngIf="show2013" class="img2" src={{novaImage}}>
+
 
             </section>
             <!-- experince ends -->
 
-             <!-- skills starts -->
-             <section class="skills" *ngIf="showSkills">
-                    <button class="b b9 btn-primary" (click)="ShowDesktopSkills()">DESKTOP</button>
-                    <button class="b b10 btn-danger" (click)="ShowWebSkills()">WEB</button>
-                    <button class="b b11 btn-warning" (click)="ShowFirmwareSkills()">HARDWARE</button>
+            <!-- skills starts -->
+            <section class="skills" *ngIf="showSkills">
+                <button class="b b9 btn-primary" (click)="ShowDesktopSkills()">DESKTOP</button>
+                <button class="b b10 btn-danger" (click)="ShowWebSkills()">WEB</button>
+                <button class="b b11 btn-warning" (click)="ShowFirmwareSkills()">HARDWARE</button>
 
-                    <header *ngIf="showDesktopSkills" class="t1">
-                        <h1 class="display-5 text-uppercase text-danger">Programing
-                            <span class="text-success">Languages:</span>
-                        </h1>
-                    </header>
-                    <h3 *ngIf="showDesktopSkills" class="display-5 text-uppercase text-white desktopSkill1">C</h3>
-                    <h3 *ngIf="showDesktopSkills" class="display-5 text-uppercase text-white desktopSkill2">C++</h3>
-                    <h3 *ngIf="showDesktopSkills" class="display-5 text-uppercase text-white desktopSkill3">C#</h3>
 
-                    <header *ngIf="showDesktopSkills" class="t2">
-                        <h1 class="display-5 text-uppercase text-danger">Markup
-                            <span class="text-success">Languages:</span>
-                        </h1>
-                    </header>
-                    <h3 *ngIf="showDesktopSkills" class="display-5 text-uppercase text-white desktopSkill4">XAML</h3>
-                    <h3 *ngIf="showDesktopSkills" class="display-5 text-uppercase text-white desktopSkill5">XML</h3>
+                <header *ngIf="showDesktopSkills" class="t1">
+                    <h2 class="display-5 text-uppercase text-success">Programming Languages: <span
+                            class="display-3 text-uppercase text-white"> C , C++ , C# </span></h2>
+                </header>
 
-                    <header *ngIf="showDesktopSkills" class="t3">
-                        <h1 class="display-5 text-uppercase text-danger">Frameworks
-                            <span class="text-success">Libraries:</span>
-                        </h1>
-                    </header>
-                    <h3 *ngIf="showDesktopSkills" class="display-5 text-uppercase text-white desktopSkill6">WPF</h3>
-                    <h3 *ngIf="showDesktopSkills" class="display-5 text-uppercase text-white desktopSkill7">WCF</h3>
-                    <h3 *ngIf="showDesktopSkills" class="display-5 text-uppercase text-white desktopSkill8">PRISM</h3>
+                <header *ngIf="showDesktopSkills" class="t2">
+                    <h2 class="display-5 text-uppercase text-success">Markup Languages: <span
+                            class="display-3 text-uppercase text-white">XAML , XML</span></h2>
+                </header>
 
-                    <header *ngIf="showDesktopSkills" class="t4">
-                        <h1 class="display-5 text-uppercase text-danger">Design
-                            <span class="text-success">Patterns:</span>
-                        </h1>
-                    </header>
-                    <h3 *ngIf="showDesktopSkills" class="display-5 text-uppercase text-white desktopSkill9">MVVM</h3>
-                    <h3 *ngIf="showDesktopSkills" class="display-5 text-uppercase text-white desktopSkill10">Dependency<br> Injection</h3>
-                    <h3 *ngIf="showDesktopSkills" class="display-5 text-uppercase text-white desktopSkill11">Command</h3>
+                <header *ngIf="showDesktopSkills" class="t3">
+                    <h2 class="display-5 text-uppercase text-success">Frameworks , Libraries: <span
+                            class="display-3 text-uppercase text-white">WPF , WCF , PRISM</span></h2>
+                </header>
 
-                    <header *ngIf="showWebSkills" class="t1">
-                        <h1 class="display-5 text-uppercase text-danger">Programing
-                            <span class="text-success">Languages:</span>
-                        </h1>
-                    </header>
-                    <h3 *ngIf="showWebSkills" class="display-5 text-uppercase text-white desktopSkill1">Java Script ,  Phyton</h3>
+                <header *ngIf="showDesktopSkills" class="t4">
+                    <h2 class="display-5 text-uppercase text-success">Design Patterns: <span
+                            class="display-3 text-uppercase text-white">MVVM , Dependency Injection , Command</span>
+                    </h2>
+                </header>
 
-                    <header *ngIf="showWebSkills" class="t2">
-                        <h1 class="display-5 text-uppercase text-danger">Markup-
-                            <span class="text-success">Data Structuer:</span>
-                        </h1>
-                    </header>
-                    <h3 *ngIf="showWebSkills" class="display-5 text-uppercase text-white desktopSkill4">HTML , JSON </h3>
-                   
+                <header *ngIf="showWebSkills" class="t1">
+                    <h2 class="display-5 text-uppercase text-success">Client Side: <span
+                            class="display-3 text-uppercase text-white"> AngularJs , HTML , CSS , Bootstrap ,<br />
+                            Visual Studio Code</span></h2>
+                </header>
+
+                <header *ngIf="showWebSkills" class="t2">
+                    <h2 class="display-5 text-uppercase text-success">Server Side: <span
+                            class="display-3 text-uppercase text-white">NodeJS , Express ,RESTfull Services ,
+                            Javascript</span></h2>
+                </header>
+
+                <header *ngIf="showWebSkills" class="t3">
+                    <h2 class="display-5 text-uppercase text-success">Database: <span
+                            class="display-3 text-uppercase text-white">Mongo DB , Firebase Database</span></h2>
+                </header>
+
+                <header *ngIf="showFirmwareSkills" class="t1">
+                    <h2 class="display-5 text-uppercase text-success">PLC: <span
+                            class="display-3 text-uppercase text-white"> Allen Bradlley , Siemens S7 , Omron
+                            <br /></span></h2>
+                </header>
+
+                <header *ngIf="showFirmwareSkills" class="t2">
+                    <h2 class="display-5 text-uppercase text-success">Microcontrollers: <span
+                            class="display-3 text-uppercase text-white">  ESP8266 , Arduino ,PIC and Rasberry PI
+                            <br /></span></h2>
+                </header>
+
+                <header *ngIf="showFirmwareSkills" class="t3">
+                    <h2 class="display-5 text-uppercase text-success">Fimware: <span
+                            class="display-3 text-uppercase text-white"> C , and Assembely</span></h2>
+                </header>
+
+
 
             </section>
             <!-- skills ends -->

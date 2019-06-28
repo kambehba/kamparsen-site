@@ -23,8 +23,14 @@ export class AppComponent {
   private responsibalities: string;
 
   private educationImage: string;
-  private camoziImages: string[] = ["../assets/i4.JPG", "../assets/i5.JPG", "../assets/i6.JPG", "../assets/i7.JPG", "../assets/i8.JPG", "../assets/i9.JPG",];
+  private camoziImages: string[] = ["../assets/i4.JPG", "../assets/i5.JPG", "../assets/i6.JPG", "../assets/i7.JPG", "../assets/i8.JPG", "../assets/i9.JPG"];
+  private espnImages: string[] = ["../assets/i11.png", "../assets/i12.png"];
+  private novaImages: string[] = ["../assets/1.jpg", "../assets/2.jpg","../assets/3.jpg"];
   private camozziImage: string;
+  private espnImage: string;
+  private novaImage: string;
+
+  private raytheonImage: string;
 
   private show1999: boolean;
   private show2002: boolean;
@@ -44,9 +50,11 @@ export class AppComponent {
   private showFirmwareSkills: boolean;
 
   private companyLogo: string;
-  
 
-  private currentCamozziImageIndex : number
+
+  private currentCamozziImageIndex: number
+  private currentEspnImageIndex: number
+  private currentNovaImageIndex: number
 
   private allMonth: string[] = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -57,6 +65,7 @@ export class AppComponent {
   }
 
   ngOnInit() {
+
     this.siteService.timeDateModel.subscribe(timeData => {
       this.currentWeekDay = timeData.dayOfTheWeek;
       this.currentMonth = this.allMonth[Number(timeData.currentDateTime.substring(5, 7))];
@@ -69,6 +78,8 @@ export class AppComponent {
 
       this.hideAllExperinces();
       this.currentCamozziImageIndex = 0;
+      this.currentEspnImageIndex = 0;
+      this.currentNovaImageIndex = 0;
 
     });
 
@@ -77,15 +88,12 @@ export class AppComponent {
     });
 
     this.loadAbout();
+
   }
 
 
   ConvertKelvinToFarenhite(params: number): number {
     return (params - 273.15) * 1.8 + 32;
-  }
-
-  setComozziImages() {
-
   }
 
 
@@ -103,8 +111,7 @@ export class AppComponent {
     this.companyLogo = "../assets/companyLogo.png";
     this.jobtitle = "Electrical and Automation  Engineer";
     this.responsibalities = "Electrical Panel design , PLC programming , Robotics and Automation."
-
-    this.camozziImage = this.camoziImages[ this.currentCamozziImageIndex ];
+    this.camozziImage = this.camoziImages[this.currentCamozziImageIndex];
 
   }
 
@@ -122,7 +129,7 @@ export class AppComponent {
   Show2008() {
     this.hideAllExperinces();
     this.show2008 = true;
-
+    this.raytheonImage = "../assets/i10.JPG";
     this.company = "Raytheon";
     this.companyLogo = "../assets/raytheonLogo.jpg";
     this.jobtitle = "Software Engineer";
@@ -133,7 +140,7 @@ export class AppComponent {
   Show2010() {
     this.hideAllExperinces();
     this.show2010 = true;
-
+    this.espnImage = this.espnImages[this.currentEspnImageIndex];
     this.company = "ESPN";
     this.companyLogo = "../assets/espnLogo.png";
     this.jobtitle = "Software Engineer";
@@ -144,7 +151,7 @@ export class AppComponent {
   Show2013() {
     this.hideAllExperinces();
     this.show2013 = true;
-
+    this.novaImage = this.novaImages[this.currentNovaImageIndex];
     this.company = "Nova Techhologies";
     this.companyLogo = "../assets/novaLogo.jpg";
     this.jobtitle = "Software Engineer";
@@ -152,104 +159,142 @@ export class AppComponent {
 
   }
 
-  prevImage(){
-    this.currentCamozziImageIndex --;
+  prevImage() {
+    if (this.show1999) {
+      this.currentCamozziImageIndex--;
 
-    if( this.currentCamozziImageIndex <=0)  this.currentCamozziImageIndex =5;
-   
-    this.camozziImage = this.camoziImages[ this.currentCamozziImageIndex ];
+      if (this.currentCamozziImageIndex <= 0) this.currentCamozziImageIndex = 5;
+
+      this.camozziImage = this.camoziImages[this.currentCamozziImageIndex];
+
+    }
+
+    if (this.show2010) {
+      this.currentEspnImageIndex--;
+
+      if (this.currentEspnImageIndex <= 0) this.currentEspnImageIndex = 1;
+
+      this.espnImage = this.espnImages[this.currentEspnImageIndex];
+
+    }
+
+    if (this.show2013) {
+      this.currentNovaImageIndex--;
+
+      if (this.currentNovaImageIndex <= 0) this.currentNovaImageIndex = 1;
+
+      this.novaImage = this.novaImages[this.currentNovaImageIndex];
+
+    }
+  }
+
+  nextImage() {
+    if (this.show1999) {
+      this.currentCamozziImageIndex++;
+
+      if (this.currentCamozziImageIndex > 5) this.currentCamozziImageIndex = 0;
+
+      this.camozziImage = this.camoziImages[this.currentCamozziImageIndex];
+    }
+
+    if (this.show2010) {
+      this.currentEspnImageIndex++;
+
+      if (this.currentEspnImageIndex > 1) this.currentEspnImageIndex = 0;
+
+      this.espnImage = this.espnImages[this.currentEspnImageIndex];
+    }
+
+    if (this.show2013) {
+      this.currentNovaImageIndex++;
+
+      if (this.currentNovaImageIndex > 2) this.currentNovaImageIndex = 0;
+
+      this.novaImage = this.novaImages[this.currentNovaImageIndex];
+    }
 
   }
 
-  nextImage(){
-    this.currentCamozziImageIndex ++;
-
-    if( this.currentCamozziImageIndex >= 5)  this.currentCamozziImageIndex =0;
-   
-    this.camozziImage = this.camoziImages[ this.currentCamozziImageIndex ];
-
-  }
-
-  loadAbout(){
+  loadAbout() {
     this.hideAllSections();
     this.showAbout = true;
-    
+
   }
 
-  loadEducation(){
+  loadEducation() {
     this.hideAllSections();
     this.showEducation = true;
-    
+
   }
 
-  loadExperience(){
+  loadExperience() {
     this.hideAllSections();
     this.showExperience = true;
-    
+
   }
 
-  loadSkills(){
+  loadSkills() {
     this.hideAllSections();
     this.hideAllExperinces();
     this.hideAllSkills();
     this.showSkills = true;
     this.showDesktopSkills = true;
-    
+
   }
 
-  loadInterests(){
+  loadInterests() {
     this.hideAllSections();
     this.showInterests = true;
-    
+
   }
 
-  loadContact(){
+  loadContact() {
     this.hideAllSections();
     this.showContact = true;
-    
+
   }
 
-  hideAllSections(){
+  hideAllSections() {
     this.showAbout = false;
     this.showEducation = false;
     this.showExperience = false;
     this.showSkills = false;
     this.showInterests = false;
     this.showContact = false;
-  
+
   }
 
-  hideAllExperinces(){
+  hideAllExperinces() {
     this.show1999 = false;
     this.show2002 = false;
     this.show2008 = false;
     this.show2010 = false;
   }
 
-  hideAllSkills(){
+  hideAllSkills() {
     this.showDesktopSkills = false;
     this.showWebSkills = false;
     this.showFirmwareSkills = false;
-    
-  
+
+
   }
 
-  ShowDesktopSkills(){
+  ShowDesktopSkills() {
     this.hideAllSkills();
     this.showDesktopSkills = true;
 
   }
 
-  ShowWebSkills(){
+  ShowWebSkills() {
     this.hideAllSkills();
     this.showWebSkills = true;
-    
+
   }
 
-  ShowFirmwareSkills(){
+  ShowFirmwareSkills() {
     this.hideAllSkills();
     this.showFirmwareSkills = true;
-    
+
   }
 
 
