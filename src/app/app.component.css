@@ -96,7 +96,8 @@ main{
     margin: 2rem;
     font-size: xx-large;
     color: #ecedf0;
-    
+    align-self: center;
+    width: 700px;
 }
 
 .education{
