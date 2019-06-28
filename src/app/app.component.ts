@@ -73,15 +73,15 @@ export class AppComponent {
       this.currentYear = timeData.currentDateTime.substring(0, 4);
       this.currentTime = timeData.currentDateTime.substring(11, 16);
 
-      this.siteService.GetWeatherInfo();
+    });
+
+    this.siteService.GetWeatherInfo();
       this.hideAllSkills();
 
       this.hideAllExperinces();
       this.currentCamozziImageIndex = 0;
       this.currentEspnImageIndex = 0;
       this.currentNovaImageIndex = 0;
-
-    });
 
     this.siteService.weatherModel.subscribe(weatherData => {
       this.currentTemp = Math.floor(this.ConvertKelvinToFarenhite(weatherData.main.temp));
@@ -141,6 +141,7 @@ export class AppComponent {
     this.hideAllExperinces();
     this.show2010 = true;
     this.espnImage = this.espnImages[this.currentEspnImageIndex];
+    alert(this.espnImage);
     this.company = "ESPN";
     this.companyLogo = "../assets/espnLogo.png";
     this.jobtitle = "Software Engineer";
@@ -204,7 +205,7 @@ export class AppComponent {
 
       this.espnImage = this.espnImages[this.currentEspnImageIndex];
     }
-
+//kj
     if (this.show2013) {
       this.currentNovaImageIndex++;
 
