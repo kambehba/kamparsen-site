@@ -370,6 +370,44 @@ main{
   
 }
 
+.interests{
+    display: grid;
+    grid-template-columns: repeat(4,minmax(auto,200px));
+    grid-template-rows: 50px repeat(4,auto);
+    grid-template-areas: 
+    "e e e e"
+    "e1 interest1Title interest1Title interest1Title"
+    "e2 interestImage interestImage interestImage"
+    "e3 interest1Text interest1Text interest1Text"
+    "e4 interestPrevBtn e5 interestNextBtn";
+  
+}
+
+.interest1Title{
+    grid-area: interest1Title;
+}
+
+.interestImage{
+    grid-area: interestImage;
+}
+
+.interest1Text{
+    grid-area: interest1Text;
+    font-size: large;
+    color: rgb(248, 244, 244);
+    font-weight: bold;
+}
+
+.interestNextBtn{
+    grid-area: interestNextBtn;
+    margin-top: 2rem;
+}
+
+.interestPrevBtn{
+    grid-area: interestPrevBtn;
+    margin-top: 2rem;
+}
+
 
 
 

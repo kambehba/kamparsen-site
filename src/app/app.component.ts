@@ -11,24 +11,32 @@ export class AppComponent {
 
   title = 'kamparsen-site';
 
-  private currentWeekDay: string;
-  private currentMonth: string;
-  private currentDay: string;
-  private currentYear: string;
+  // private currentWeekDay: string;
+  // private currentMonth: string;
+  // private currentDay: string;
+  // private currentYear: string;
+  // private currentTemp: number;
+  // private currentTime: string;
+
+  private currentDate: string;
   private currentTemp: number;
-  private currentTime: string;
 
   private company: string;
   private jobtitle: string;
   private responsibalities: string;
+  private interestText: string;
+  private interestTitle: string;
 
   private educationImage: string;
   private camoziImages: string[] = ["../assets/i4.JPG", "../assets/i5.JPG", "../assets/i6.JPG", "../assets/i7.JPG", "../assets/i8.JPG", "../assets/i9.JPG"];
-  private espnImages: string[] = ["../assets/i11.png", "../assets/i12.png"];
-  private novaImages: string[] = ["../assets/1.jpg", "../assets/2.jpg","../assets/3.jpg"];
+  private espnImages: string[] = ["../assets/i11.PNG", "../assets/i12.PNG"];
+  private novaImages: string[] = ["../assets/1.JPG", "../assets/2.JPG", "../assets/3.JPG"];
+  private interestImages: string[] = ["../assets/i20.JPG", "../assets/i21.JPG", "../assets/i22.JPG","../assets/i23.JPG"];
+  
   private camozziImage: string;
   private espnImage: string;
   private novaImage: string;
+  private interestImage: string;
 
   private raytheonImage: string;
 
@@ -49,40 +57,42 @@ export class AppComponent {
   private showWebSkills: boolean;
   private showFirmwareSkills: boolean;
 
+  private showInterest1:boolean;
+  private showInterest2:boolean;
+  private showInterest3:boolean;
+  private showInterest4:boolean;
+  private showInterest5:boolean;
+
   private companyLogo: string;
 
 
-  private currentCamozziImageIndex: number
-  private currentEspnImageIndex: number
-  private currentNovaImageIndex: number
+  private currentCamozziImageIndex: number;
+  private currentEspnImageIndex: number;
+  private currentNovaImageIndex: number;
+  private currentInterestImageIndex : number;
 
   private allMonth: string[] = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
   constructor(private siteService: SiteService) {
-    this.siteService.GetDateTimeInfo();
+   // this.siteService.GetDateTimeInfo();
 
 
   }
 
   ngOnInit() {
 
-    this.siteService.timeDateModel.subscribe(timeData => {
-      this.currentWeekDay = timeData.dayOfTheWeek;
-      this.currentMonth = this.allMonth[Number(timeData.currentDateTime.substring(5, 7))];
-      this.currentDay = timeData.currentDateTime.substring(8, 10);
-      this.currentYear = timeData.currentDateTime.substring(0, 4);
-      this.currentTime = timeData.currentDateTime.substring(11, 16);
-
-    });
-
+    
+    this.currentDate = new Date().toDateString();
     this.siteService.GetWeatherInfo();
-      this.hideAllSkills();
-
-      this.hideAllExperinces();
-      this.currentCamozziImageIndex = 0;
-      this.currentEspnImageIndex = 0;
-      this.currentNovaImageIndex = 0;
-
+    this.interestText = '';
+    this.interestTitle = '';
+    this.hideAllExperinces();
+    this.hideAllInterests();
+    this.hideAllSkills();
+    this.currentCamozziImageIndex = 0;
+    this.currentEspnImageIndex = 0;
+    this.currentNovaImageIndex = 0;
+    this.currentInterestImageIndex = 0;
     this.siteService.weatherModel.subscribe(weatherData => {
       this.currentTemp = Math.floor(this.ConvertKelvinToFarenhite(weatherData.main.temp));
     });
@@ -141,7 +151,6 @@ export class AppComponent {
     this.hideAllExperinces();
     this.show2010 = true;
     this.espnImage = this.espnImages[this.currentEspnImageIndex];
-    alert(this.espnImage);
     this.company = "ESPN";
     this.companyLogo = "../assets/espnLogo.png";
     this.jobtitle = "Software Engineer";
@@ -205,7 +214,7 @@ export class AppComponent {
 
       this.espnImage = this.espnImages[this.currentEspnImageIndex];
     }
-//kj
+    
     if (this.show2013) {
       this.currentNovaImageIndex++;
 
@@ -214,6 +223,24 @@ export class AppComponent {
       this.novaImage = this.novaImages[this.currentNovaImageIndex];
     }
 
+  }
+
+  nextInterestImage(){
+    
+    if(this.showInterest1){ this.showInterest1 = false; this.showInterest2 = true;return;}
+    if(this.showInterest2) {this.showInterest2 = false; this.showInterest3 = true;return;}
+    if(this.showInterest3) {this.showInterest3 = false; this.showInterest4 = true;return;}
+    if(this.showInterest4) {this.showInterest4 = false; this.showInterest1 = true;return;}
+   
+  }
+
+  prevInterestImage(){
+    
+    if(this.showInterest1){ this.showInterest1 = false; this.showInterest4 = true;return;}
+    if(this.showInterest2) {this.showInterest2 = false; this.showInterest1 = true;return;}
+    if(this.showInterest3) {this.showInterest3 = false; this.showInterest2 = true;return;}
+    if(this.showInterest4) {this.showInterest4 = false; this.showInterest3 = true;return;}
+   
   }
 
   loadAbout() {
@@ -245,13 +272,22 @@ export class AppComponent {
 
   loadInterests() {
     this.hideAllSections();
+    this.hideAllInterests();
     this.showInterests = true;
-
+   
+    this.showInterest1 = true;
   }
 
   loadContact() {
     this.hideAllSections();
     this.showContact = true;
+
+  }
+
+  hideAllInterests(){
+    this.showInterest1 = false;
+    this.showInterest2 = false;
+    this.showInterest3 = false;
 
   }
 

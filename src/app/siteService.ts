@@ -18,10 +18,15 @@ export class SiteService{
 
     GetDateTimeInfo()
     {
-        this.http.get<DateTimeModel>('http://worldclockapi.com/api/json/est/now').subscribe(
-            data=>{this.timeDateModel.next(data);
-            console.log(data.currentDateTime);
-            });
+        // this.http.get<DateTimeModel>('http://worldclockapi.com/api/json/est/now').subscribe(
+        //     data=>{this.timeDateModel.next(data);
+        //     console.log(data.currentDateTime);
+        //     });
+
+        // this.http.get<DateTimeModel>('https://timezonedb.p.rapidapi.com/?zone=America%2FLos_Angeles&time=1358474681&lat=34.048108&lng=-118.244705&format=xml').subscribe(
+        //     data=>{this.timeDateModel.next(data);
+        //     console.log(data.currentDateTime);
+        //     });
 
     }
 

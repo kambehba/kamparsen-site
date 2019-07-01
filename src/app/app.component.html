@@ -2,7 +2,7 @@
 
     <aside>
         <br>
-        <p class="date">Today is {{currentWeekDay}}, {{currentMonth}}-{{currentDay}}, {{currentYear}}
+        <p class="date">Today is {{currentDate}}
             <br><br><span> Orlando Florida</span> <br><br>
             <span> Temp: {{currentTemp}} F</span> </p>
         <img class="myPhoto" src="../assets/kamparsen.jpg" alt="Italian Trulli">
@@ -27,12 +27,12 @@
                     </h1>
                 </header>
                 <article class="aboutText">
-                    Thank you for visiting my site !<br/><br/>
-                    I am a problem solver who does Engineering not only 
-                    to make a living but also for fun.<br/><br/>
-                    I started my carrier back in 1999 by falling in love with Automation and programming PLCs.<br/>
+                    Thank you for visiting my site !<br /><br />
+                    I am a problem solver who does Engineering not only
+                    to make a living but also for fun.<br /><br />
+                    I started my carrier back in 1999 by falling in love with Automation and programming PLCs.<br />
                     Since then I have worked in veraity of projects from Embeded systems to Web Application.<br>
-                    
+
                 </article>
             </section>
             <!-- about ends -->
@@ -157,7 +157,7 @@
 
                 <header *ngIf="showFirmwareSkills" class="t2">
                     <h2 class="display-5 text-uppercase text-success">Microcontrollers: <span
-                            class="display-3 text-uppercase text-white">  ESP8266 , Arduino ,PIC and Rasberry PI
+                            class="display-3 text-uppercase text-white"> ESP8266 , Arduino ,PIC and Rasberry PI
                             <br /></span></h2>
                 </header>
 
@@ -170,6 +170,57 @@
 
             </section>
             <!-- skills ends -->
+
+            <!-- interests -->
+            <section class="interests" *ngIf="showInterests">
+
+                <header *ngIf="showInterest1" class="interest1Title">
+                    <h2 class="display-5 text-uppercase text-warning">Arteficial Intellegence</h2>
+                </header>
+                <img *ngIf="showInterest1" class="interestImage" src="../assets/i20.JPG">
+                <article *ngIf="showInterest1" class="interest1Text">I like to Interface with AI to create next
+                    generation of Apps</article>
+
+                <header *ngIf="showInterest2" class="interest1Title">
+                    <h2 class="display-5 text-uppercase text-warning">Full Stack Development </h2>
+                </header>
+                <img *ngIf="showInterest2" class="interestImage" src="../assets/i21.JPG">
+                <article *ngIf="showInterest2" class="interest1Text">Like to use NodeJs as my backend RESTfull API and
+                    AngularJs for my front End </article>
+
+                <header *ngIf="showInterest3" class="interest1Title">
+                    <h2 class="display-5 text-uppercase text-warning">Algorithems and Data Structuer</h2>
+                </header>
+                <img *ngIf="showInterest3" class="interestImage" src="../assets/i22.JPG">
+                <article *ngIf="showInterest3" class="interest1Text">Wrting Efficient Algorithems to solve problems is my passion. </article>
+
+                <header *ngIf="showInterest4" class="interest1Title">
+                    <h2 class="display-5 text-uppercase text-warning">Microcontrollers and PLCs</h2>
+                </header>
+                <img *ngIf="showInterest4" class="interestImage" src="../assets/i23.JPG">
+                <article *ngIf="showInterest4" class="interest1Text">I started my carrier with Programming PLCs for Automation lines.<br/></article>
+
+                <button *ngIf="showInterests" class="interestPrevBtn btn-primary"
+                    (click)="prevInterestImage()">Prev</button>
+
+                <button *ngIf="showInterests" class="interestNextBtn btn-primary"
+                    (click)="nextInterestImage()">Next</button>
+            </section>
+            <!-- interests ends -->
+
+             <!-- contact -->
+             <section class="contact" *ngIf="showContact">
+
+                    <header class="interest1Title">
+                            <h2 class="display-5 text-uppercase text-warning">Email : Kamparsen@yahoo.com</h2>
+                    </header>
+
+                    <header class="interest2Title">
+                            <h2 class="display-5 text-uppercase text-warning">Cell  : 407.455.2707</h2>
+                    </header>
+
+             </section>
+              <!-- contacts ends -->
 
 
 
