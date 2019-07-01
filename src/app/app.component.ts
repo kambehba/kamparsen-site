@@ -30,15 +30,17 @@ export class AppComponent {
   private educationImage: string;
   private camoziImages: string[] = ["../assets/i4.JPG", "../assets/i5.JPG", "../assets/i6.JPG", "../assets/i7.JPG", "../assets/i8.JPG", "../assets/i9.JPG"];
   private espnImages: string[] = ["../assets/i11.PNG", "../assets/i12.PNG"];
+  private raytheonImages: string[] = ["../assets/sigma.JPG", "../assets/i10.JPG"];
   private novaImages: string[] = ["../assets/1.JPG", "../assets/2.JPG", "../assets/3.JPG"];
   private interestImages: string[] = ["../assets/i20.JPG", "../assets/i21.JPG", "../assets/i22.JPG","../assets/i23.JPG"];
   
   private camozziImage: string;
   private espnImage: string;
+  private raytheonImage: string;
   private novaImage: string;
   private interestImage: string;
 
-  private raytheonImage: string;
+  
 
   private show1999: boolean;
   private show2002: boolean;
@@ -68,6 +70,7 @@ export class AppComponent {
 
   private currentCamozziImageIndex: number;
   private currentEspnImageIndex: number;
+  private currentRaytheonImageIndex: number;
   private currentNovaImageIndex: number;
   private currentInterestImageIndex : number;
 
@@ -93,6 +96,7 @@ export class AppComponent {
     this.currentEspnImageIndex = 0;
     this.currentNovaImageIndex = 0;
     this.currentInterestImageIndex = 0;
+    this.currentRaytheonImageIndex = 0;
     this.siteService.weatherModel.subscribe(weatherData => {
       this.currentTemp = Math.floor(this.ConvertKelvinToFarenhite(weatherData.main.temp));
     });
@@ -132,14 +136,13 @@ export class AppComponent {
     this.company = "Honeywell";
     this.companyLogo = "../assets/honeywellLogo.png";
     this.jobtitle = "Electrical , BMS, BAS  Engineer";
-    this.responsibalities = "Smart Building design for HVAC systems. "
-
+    
   }
 
   Show2008() {
     this.hideAllExperinces();
     this.show2008 = true;
-    this.raytheonImage = "../assets/i10.JPG";
+    this.raytheonImage = this.raytheonImages[this.currentRaytheonImageIndex];
     this.company = "Raytheon";
     this.companyLogo = "../assets/raytheonLogo.jpg";
     this.jobtitle = "Software Engineer";
@@ -179,6 +182,18 @@ export class AppComponent {
 
     }
 
+    if (this.show2008) {
+      this.currentRaytheonImageIndex--;
+     
+      if (this.currentRaytheonImageIndex <= 0) this.currentRaytheonImageIndex = 1;
+      else this.currentRaytheonImageIndex = 0;
+
+      this.raytheonImage = this.raytheonImages[this.currentRaytheonImageIndex];
+
+     
+
+    }
+
     if (this.show2010) {
       this.currentEspnImageIndex--;
 
@@ -207,6 +222,14 @@ export class AppComponent {
       this.camozziImage = this.camoziImages[this.currentCamozziImageIndex];
     }
 
+    if (this.show2008) {
+      this.currentRaytheonImageIndex++;
+
+      if (this.currentRaytheonImageIndex > 1) this.currentRaytheonImageIndex = 0;
+
+      this.raytheonImage = this.raytheonImages[this.currentRaytheonImageIndex];
+    }
+
     if (this.show2010) {
       this.currentEspnImageIndex++;
 
@@ -230,16 +253,18 @@ export class AppComponent {
     if(this.showInterest1){ this.showInterest1 = false; this.showInterest2 = true;return;}
     if(this.showInterest2) {this.showInterest2 = false; this.showInterest3 = true;return;}
     if(this.showInterest3) {this.showInterest3 = false; this.showInterest4 = true;return;}
-    if(this.showInterest4) {this.showInterest4 = false; this.showInterest1 = true;return;}
+    if(this.showInterest4) {this.showInterest4 = false; this.showInterest5 = true;return;}
+    if(this.showInterest5) {this.showInterest5 = false; this.showInterest1 = true;return;}
    
   }
 
   prevInterestImage(){
     
-    if(this.showInterest1){ this.showInterest1 = false; this.showInterest4 = true;return;}
+    if(this.showInterest1){ this.showInterest1 = false; this.showInterest5 = true;return;}
     if(this.showInterest2) {this.showInterest2 = false; this.showInterest1 = true;return;}
     if(this.showInterest3) {this.showInterest3 = false; this.showInterest2 = true;return;}
     if(this.showInterest4) {this.showInterest4 = false; this.showInterest3 = true;return;}
+    if(this.showInterest5) {this.showInterest5 = false; this.showInterest4 = true;return;}
    
   }
 
@@ -306,6 +331,7 @@ export class AppComponent {
     this.show2002 = false;
     this.show2008 = false;
     this.show2010 = false;
+    this.show2013 = false;
   }
 
   hideAllSkills() {

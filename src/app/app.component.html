@@ -64,9 +64,9 @@
                 <button class="b b7 btn-primary" (click)="Show2010()">2010-2013</button>
                 <button class="b b8 btn-danger" (click)="Show2013()">2013-2019</button>
 
-                <button *ngIf="show1999 || show2010 || show2013" class="prevBtn btn-primary"
+                <button *ngIf="show1999 || show2010 || show2008 || show2013" class="prevBtn btn-primary"
                     (click)="prevImage()">Prev</button>
-                <button *ngIf="show1999 || show2010 || show2013" class="nextBtn btn-primary"
+                <button *ngIf="show1999 || show2010 || show2008 || show2013" class="nextBtn btn-primary"
                     (click)="nextImage()">Next</button>
 
 
@@ -80,7 +80,12 @@
                 <img *ngIf="show2002" class="companyLogo" src={{companyLogo}}>
                 <div *ngIf="show2002" class="company">Company: <span>{{company}}</span> </div>
                 <div *ngIf="show2002" class="title">Title: <span>{{jobtitle}}</span> </div>
-                <div *ngIf="show2002" class="role">Responsibalities: <span>{{responsibalities}}</span> </div>
+                <div *ngIf="show2002" class="role">Responsibalities: <article style="color: rgb(123, 255, 0)">
+                    Worked within a small team of Engineers.<br/>
+                    BMS system Design , implementation and install in site<br/>
+                     for two hospital and one residential building.
+
+                </article> </div>
 
                 <img *ngIf="show2008" class="companyLogo" src={{companyLogo}}>
                 <div *ngIf="show2008" class="company">Company: <span>{{company}}</span> </div>
@@ -192,13 +197,19 @@
                     <h2 class="display-5 text-uppercase text-warning">Algorithems and Data Structuer</h2>
                 </header>
                 <img *ngIf="showInterest3" class="interestImage" src="../assets/i22.JPG">
-                <article *ngIf="showInterest3" class="interest1Text">Wrting Efficient Algorithems to solve problems is my passion. </article>
+                <article *ngIf="showInterest3" class="interest1Text">Writing Efficient Algorithems to solve problems is my passion. </article>
 
                 <header *ngIf="showInterest4" class="interest1Title">
                     <h2 class="display-5 text-uppercase text-warning">Microcontrollers and PLCs</h2>
                 </header>
                 <img *ngIf="showInterest4" class="interestImage" src="../assets/i23.JPG">
                 <article *ngIf="showInterest4" class="interest1Text">I started my carrier with Programming PLCs for Automation lines.<br/></article>
+
+                <header *ngIf="showInterest5" class="interest1Title">
+                    <h2 class="display-5 text-uppercase text-warning">IoT - Interet of Things</h2>
+                </header>
+                <img *ngIf="showInterest5" class="interestImage" src="../assets/iot.JPG">
+                <article *ngIf="showInterest5" class="interest1Text">I have done multiple IoT projects and like to expand my skills on this area.<br/></article>
 
                 <button *ngIf="showInterests" class="interestPrevBtn btn-primary"
                     (click)="prevInterestImage()">Prev</button>
@@ -211,11 +222,11 @@
              <!-- contact -->
              <section class="contact" *ngIf="showContact">
 
-                    <header class="interest1Title">
+                    <header class="contact1">
                             <h2 class="display-5 text-uppercase text-warning">Email : Kamparsen@yahoo.com</h2>
                     </header>
 
-                    <header class="interest2Title">
+                    <header class="contact2">
                             <h2 class="display-5 text-uppercase text-warning">Cell  : 407.455.2707</h2>
                     </header>
 
