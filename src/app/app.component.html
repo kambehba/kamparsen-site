@@ -29,9 +29,10 @@
                 <article class="aboutText">
                     Thank you for visiting my site !<br /><br />
                     I am a problem solver who does Engineering not only
-                    to make a living but also for fun.<br /><br />
+                    to make a living but also as passion and hoppy.<br /><br />
                     I started my carrier back in 1999 by falling in love with Automation and programming PLCs.<br />
-                    Since then I have worked in veraity of projects from Embeded systems to Web Application.<br>
+                    Since then I have worked in veraity of projects from Embeded systems to Web Application.<br /><br />
+                    Readability and Scalability are the two main factor for me when I write Software or Firmware.
 
                 </article>
             </section>
@@ -81,28 +82,54 @@
                 <div *ngIf="show2002" class="company">Company: <span>{{company}}</span> </div>
                 <div *ngIf="show2002" class="title">Title: <span>{{jobtitle}}</span> </div>
                 <div *ngIf="show2002" class="role">Responsibalities: <article style="color: rgb(123, 255, 0)">
-                    Worked within a small team of Engineers.<br/>
-                    BMS system Design , implementation and install in site<br/>
-                     for two hospital and one residential building.
+                        Worked within a small team of Engineers.<br />
+                        BMS system Design , implementation and install in site<br />
+                        for two hospital and one residential building.
 
-                </article> </div>
+                    </article>
+                </div>
 
                 <img *ngIf="show2008" class="companyLogo" src={{companyLogo}}>
                 <div *ngIf="show2008" class="company">Company: <span>{{company}}</span> </div>
                 <div *ngIf="show2008" class="title">Title: <span>{{jobtitle}}</span> </div>
-                <div *ngIf="show2008" class="role">Responsibalities: <span>{{responsibalities}}</span> </div>
+                <div *ngIf="show2008" class="role">Responsibalities:
+                        <article style="color: rgb(123, 255, 0)">
+                                Worked within a large group of Engineers. <br/>
+                                As a Software Engineer. I was involved in Full cycle of warer fall Software Development.<br />
+                                Requirment , Design and Implementation for Mission Planner System for V-22 Aircraft<br />
+                               
+        
+                         </article> 
+                </div>
                 <img *ngIf="show2008" class="img2" src={{raytheonImage}}>
 
                 <img *ngIf="show2010" class="companyLogo" src={{companyLogo}}>
                 <div *ngIf="show2010" class="company">Company: <span>{{company}}</span> </div>
                 <div *ngIf="show2010" class="title">Title: <span>{{jobtitle}}</span> </div>
-                <div *ngIf="show2010" class="role">Responsibalities: <span>{{responsibalities}}</span> </div>
+                <div *ngIf="show2010" class="role">Responsibalities: 
+                        <article style="color: rgb(123, 255, 0)">
+                               Sports Statestics Software , Design and Development for ESPN network.<br />
+                               Distributed sytem with WPF front End and WCF middleware and SQL database<br />
+                        </article>
+                </div>
                 <img *ngIf="show2010" class="img2" src="{{espnImage}}">
+
 
                 <img *ngIf="show2013" class="companyLogo" src={{companyLogo}}>
                 <div *ngIf="show2013" class="company">Company: <span>{{company}}</span> </div>
                 <div *ngIf="show2013" class="title">Title: <span>{{jobtitle}}</span> </div>
-                <div *ngIf="show2013" class="role">Responsibalities: <span>{{responsibalities}}</span> </div>
+                <div *ngIf="show2013" class="role">Responsibalities: 
+                        <article style="color: rgb(123, 255, 0)">
+                                Design and Development of the next Generation of Call for Fire Trainers.<br />
+                                CFFT III is a Trainer/Simulator Environment designed to Train Joint Fires Observers. <br />
+                                Simulates war Enviroment in cost-effective way .<br/><br/>
+                                Developed in WPF Framework with Prism Modules , highley scalable.<br/> 
+                                I have been responsible for the Design and Development of multiple Featuers. <br />
+                                
+                                To name a few modules I worked on : Indirect Fire , Precision Strike, Message Center , Naval Fire 
+
+                         </article>
+                </div>
                 <img *ngIf="show2013" class="img2" src={{novaImage}}>
 
 
@@ -197,19 +224,22 @@
                     <h2 class="display-5 text-uppercase text-warning">Algorithems and Data Structuer</h2>
                 </header>
                 <img *ngIf="showInterest3" class="interestImage" src="../assets/i22.JPG">
-                <article *ngIf="showInterest3" class="interest1Text">Writing Efficient Algorithems to solve problems is my passion. </article>
+                <article *ngIf="showInterest3" class="interest1Text">Writing Efficient Algorithems to solve problems is
+                    my passion. </article>
 
                 <header *ngIf="showInterest4" class="interest1Title">
                     <h2 class="display-5 text-uppercase text-warning">Microcontrollers and PLCs</h2>
                 </header>
                 <img *ngIf="showInterest4" class="interestImage" src="../assets/i23.JPG">
-                <article *ngIf="showInterest4" class="interest1Text">I started my carrier with Programming PLCs for Automation lines.<br/></article>
+                <article *ngIf="showInterest4" class="interest1Text">I started my carrier with Programming PLCs for
+                    Automation lines.<br /></article>
 
                 <header *ngIf="showInterest5" class="interest1Title">
                     <h2 class="display-5 text-uppercase text-warning">IoT - Interet of Things</h2>
                 </header>
                 <img *ngIf="showInterest5" class="interestImage" src="../assets/iot.JPG">
-                <article *ngIf="showInterest5" class="interest1Text">I have done multiple IoT projects and like to expand my skills on this area.<br/></article>
+                <article *ngIf="showInterest5" class="interest1Text">I have done multiple IoT projects and like to
+                    expand my skills on this area.<br /></article>
 
                 <button *ngIf="showInterests" class="interestPrevBtn btn-primary"
                     (click)="prevInterestImage()">Prev</button>
@@ -219,19 +249,19 @@
             </section>
             <!-- interests ends -->
 
-             <!-- contact -->
-             <section class="contact" *ngIf="showContact">
+            <!-- contact -->
+            <section class="contact" *ngIf="showContact">
 
-                    <header class="contact1">
-                            <h2 class="display-5 text-uppercase text-warning">Email : Kamparsen@yahoo.com</h2>
-                    </header>
+                <header class="contact1">
+                    <h2 class="display-5 text-uppercase text-warning">Email : Kamparsen@yahoo.com</h2>
+                </header>
 
-                    <header class="contact2">
-                            <h2 class="display-5 text-uppercase text-warning">Cell  : 407.455.2707</h2>
-                    </header>
+                <header class="contact2">
+                    <h2 class="display-5 text-uppercase text-warning">Cell : 407.455.2707</h2>
+                </header>
 
-             </section>
-              <!-- contacts ends -->
+            </section>
+            <!-- contacts ends -->
 
 
 

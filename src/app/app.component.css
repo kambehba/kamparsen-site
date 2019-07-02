@@ -170,7 +170,7 @@ main{
     display: grid;
     margin-left: 2rem;
     grid-template-columns: minmax(auto,100px) minmax(auto,100px) minmax(auto,100px) minmax(auto,100px) minmax(auto,100px) minmax(120px,auto);
-    grid-template-rows: minmax(40px,auto) minmax(40px,auto) minmax(40px,auto) minmax(40px,auto) 100px 200px minmax(auto,200px) minmax(auto,200px);
+    grid-template-rows: minmax(40px,auto) minmax(40px,auto) minmax(40px,auto) minmax(80px,auto) 100px 200px minmax(auto,200px) minmax(auto,200px);
     grid-template-areas: 
     "b4 b5 b6 b7 b8 empty1"
     "companyLogo company company company company company"
