@@ -255,6 +255,7 @@ main{
     font-weight: bold;
     margin-left: 2rem;
     margin-top: 2rem;
+    margin-bottom: 2rem;
    
 }
 
@@ -263,7 +264,7 @@ main{
     width: 70px;
     height: 30px;
     z-index: 5;
-    margin-top: 3rem;
+    margin-top: 4rem;
     margin-left: 2rem;
     
    
@@ -274,7 +275,7 @@ main{
     width: 70px;
     height: 30px;
     z-index: 5;
-    margin-top: 3rem;
+    margin-top: 4rem;
     margin-left: 2rem;
 }
 

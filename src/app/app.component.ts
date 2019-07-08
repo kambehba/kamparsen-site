@@ -31,7 +31,7 @@ export class AppComponent {
   private camoziImages: string[] = ["../assets/i4.JPG", "../assets/i5.JPG", "../assets/i6.JPG", "../assets/i7.JPG", "../assets/i8.JPG", "../assets/i9.JPG"];
   private espnImages: string[] = ["../assets/i11.PNG", "../assets/i12.PNG"];
   private raytheonImages: string[] = ["../assets/sigma.JPG", "../assets/i10.JPG"];
-  private novaImages: string[] = ["../assets/1.JPG", "../assets/2.JPG", "../assets/3.JPG"];
+  private novaImages: string[] = ["../assets/nova.PNG","../assets/1.JPG", "../assets/2.JPG", "../assets/3.JPG"];
   private interestImages: string[] = ["../assets/i20.JPG", "../assets/i21.JPG", "../assets/i22.JPG","../assets/i23.JPG"];
   
   private camozziImage: string;
