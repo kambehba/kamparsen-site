@@ -169,10 +169,10 @@ main{
 .experince{
     display: grid;
     margin-left: 2rem;
-    grid-template-columns: minmax(auto,100px) minmax(auto,100px) minmax(auto,100px) minmax(auto,100px) minmax(auto,100px) minmax(120px,auto);
-    grid-template-rows: minmax(40px,auto) minmax(40px,auto) minmax(40px,auto) minmax(80px,auto) 100px 200px minmax(auto,200px) minmax(auto,200px);
+    grid-template-columns: minmax(auto,100px) minmax(auto,100px) minmax(auto,100px) minmax(auto,100px) minmax(auto,100px) minmax(auto,100px);
+    grid-template-rows: minmax(40px,auto) minmax(40px,auto) minmax(40px,auto) minmax(auto,auto) 100px 200px minmax(auto,200px) minmax(auto,200px);
     grid-template-areas: 
-    "b4 b5 b6 b7 b8 empty1"
+    "b4 b5 b6 b7 b8 b9"
     "companyLogo company company company company company"
     "companyLogo title title title title title"
     "companyLogo role role role role role"
@@ -203,6 +203,10 @@ main{
 
 .b8{
     grid-area: b8;
+}
+
+.b9{
+    grid-area: b9;
 }
 
 .companyLogo{
@@ -255,7 +259,7 @@ main{
     font-weight: bold;
     margin-left: 2rem;
     margin-top: 2rem;
-    margin-bottom: 2rem;
+   
    
 }
 

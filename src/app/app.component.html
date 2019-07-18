@@ -60,14 +60,15 @@
             <!-- experince starts -->
             <section class="experince" *ngIf="showExperience">
                 <button class="b b4 btn-success" (click)="Show1999()">1999-2002</button>
-                <button class="b b5 btn-info" (click)="Show2002()">2002-2004</button>
-                <button class="b b6 btn-warning" (click)="Show2008()">2008-2010</button>
-                <button class="b b7 btn-primary" (click)="Show2010()">2010-2013</button>
-                <button class="b b8 btn-danger" (click)="Show2013()">2013-2019</button>
+                <button class="b b5 btn-success" (click)="Show2002()">2002-2004</button>
+                <button class="b b6 btn-success" (click)="Show2008()">2008-2010</button>
+                <button class="b b7 btn-success" (click)="Show2010()">2010-2013</button>
+                <button class="b b8 btn-success" (click)="Show2013()">2013-2019</button>
+                <button class="b b9 btn-success" (click)="ShowGithub()">GitHub</button>
 
-                <button *ngIf="show1999 || show2010 || show2008 || show2013" class="prevBtn btn-primary"
+                <button *ngIf="show1999 || show2010 || show2008 || show2013" class="prevBtn btn-success"
                     (click)="prevImage()">Prev</button>
-                <button *ngIf="show1999 || show2010 || show2008 || show2013" class="nextBtn btn-primary"
+                <button *ngIf="show1999 || show2010 || show2008 || show2013" class="nextBtn btn-success"
                     (click)="nextImage()">Next</button>
 
 
@@ -131,6 +132,19 @@
                          </article>
                 </div>
                 <img *ngIf="show2013" class="img2" src={{novaImage}}>
+
+                <img *ngIf="showGithub" class="companyLogo" src={{companyLogo}}>
+                <div *ngIf="showGithub" class="company">Company: <span>{{company}}</span> </div>
+                <div *ngIf="showGithub" class="title">Title: <span>{{jobtitle}}</span> </div>
+                <div *ngIf="showGithub" class="role">Responsibalities: 
+                        <article style="color: rgb(123, 255, 0)">
+                                I have 20 Repositories in Github .<br />
+                                They are from Web applications to IoT projects. <br />
+                                
+
+                         </article>
+                </div>
+                <img *ngIf="showGithub" class="img2" src={{githubImage}}>
 
 
             </section>

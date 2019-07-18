@@ -38,6 +38,7 @@ export class AppComponent {
   private espnImage: string;
   private raytheonImage: string;
   private novaImage: string;
+  private githubImage: string = "../assets/github.PNG";
   private interestImage: string;
 
   
@@ -47,6 +48,7 @@ export class AppComponent {
   private show2008: boolean;
   private show2010: boolean;
   private show2013: boolean;
+  private showGithub: boolean;
 
   private showAbout: boolean;
   private showEducation: boolean;
@@ -167,6 +169,18 @@ export class AppComponent {
     this.novaImage = this.novaImages[this.currentNovaImageIndex];
     this.company = "Nova Techhologies";
     this.companyLogo = "../assets/novaLogo.jpg";
+    this.jobtitle = "Software Engineer";
+    this.responsibalities = "Software Design and Impelemenation , CALL FOR FIRE (CFFT III) Trainer";
+
+  }
+
+  ShowGithub() {
+    this.hideAllExperinces();
+    this.showGithub = true;
+  
+    this.githubImage =this.githubImage;
+    this.company = "Github";
+    this.companyLogo = "../assets/GitHubLogo.PNG";
     this.jobtitle = "Software Engineer";
     this.responsibalities = "Software Design and Impelemenation , CALL FOR FIRE (CFFT III) Trainer";
 
@@ -332,6 +346,7 @@ export class AppComponent {
     this.show2008 = false;
     this.show2010 = false;
     this.show2013 = false;
+    this.showGithub = false;
   }
 
   hideAllSkills() {
