@@ -40,6 +40,7 @@ export class AppComponent {
   private novaImage: string;
   private githubImage: string = "../assets/github.PNG";
   private interestImage: string;
+  private bsImage: string ="../assets/i2.JPG"
 
   
 
@@ -291,6 +292,7 @@ export class AppComponent {
   loadEducation() {
     this.hideAllSections();
     this.showEducation = true;
+    this.bsImage = "../assets/i2.JPG"
 
   }
 
