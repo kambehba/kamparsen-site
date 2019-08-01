@@ -45,6 +45,12 @@ aside{
 
 }
 
+.backBtn{
+    width: 65px;
+    height: 30px;
+
+}
+
 .myPhoto{
     width: 70%;
     border-radius: 50%;
@@ -57,6 +63,7 @@ aside{
     display: grid;
     justify-items: center;
     margin-top: 2rem;
+
 }
 
 .nav button{
@@ -105,6 +112,39 @@ main{
     align-self: center;
     width: 700px;
 }
+
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+
+  .sidenav a, .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  /* On mouse-over */
+  .sidenav a:hover, .dropdown-btn:hover {
+    color: #f1f1f1;
+  }
+
+  
 
 .education{
    
@@ -180,7 +220,7 @@ main{
 
 .img1{
    grid-area: main;
-   width:70%;
+   width:50%;
    height: auto;
    margin-top: 1rem;
    margin-left: 2rem;

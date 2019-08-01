@@ -1,23 +1,29 @@
 
 <div class="container">
 
-    
     <aside>
         <br>
         <p class="date">Today is {{currentDate}}
             <br><br><span> Orlando Florida</span> <br><br>
             <span> Temp: {{currentTemp}} F</span> </p>
         <img class="myPhoto" src="../assets/kamparsen.jpg" alt="Italian Trulli">
-        <nav class="nav">
-            <button class="navBtn btn-success" (click)="loadAbout()">About</button>
-            <button class="navBtn btn-success" (click)="loadEducation()">Education</button>
-            <button class="navBtn btn-success" (click)="loadExperience()">Experience</button>
-            <button class="navBtn btn-success" (click)="loadSkills()">Skills</button>
-            <button class="navBtn btn-success" (click)="loadInterests()">Interests</button>
-            <button class="navBtn btn-success" (click)="loadContact()">Contact</button> 
+        <nav  class="nav">
+            <div *ngIf="showNav">
+                    <button class="navBtn btn-success" (click)="loadAbout()">About</button> <br/>
+                    <button class="navBtn btn-success" (click)="loadEducation()">Education</button><br/>
+                    <button class="navBtn btn-success" (click)="loadExperience()">Experience</button><br/>
+                    <button class="navBtn btn-success" (click)="loadSkills()">Skills</button><br/>
+                    <button class="navBtn btn-success" (click)="loadInterests()">Interests</button><br/>
+                    <button class="navBtn btn-success" (click)="loadContact()">Contact</button> <br/>
 
-          
+            </div>
 
+            <div *ngIf="showNav2">
+                    <button class="btn-danger backBtn" (click)="backFromEducation()">Back</button><br/>
+                    <button class="navBtn btn-success" (click)="loadEducation2('m')">Master</button><br/>
+                    <button class="navBtn btn-success" (click)="loadEducation2('b')">Bachelor</button><br/>
+                    <button class="navBtn btn-success" (click)="loadEducation2('c')">Certificates</button><br/><br/><br/>
+            </div>
         </nav>
     </aside>
 
@@ -32,19 +38,46 @@
                     </h1>
                 </header>
                 <article class="aboutText">
-                    Thank you for visiting my site !<br /><br />
-                    I am a problem solver who does Engineering not only
-                    to make a living but also as a passion and hoppy.<br /><br />
-                    I started my carrier back in 1999 by falling in love with Automation and Programming PLCs.<br />
-                    Since then I have worked on veraity of projects from Embeded systems to Desktop and Web Application.<br /><br />
-                    Readability and Scalability are the two main factor for me when I am writing Software or Firmware.
-
+                        Thank you for visiting my site! <br /><br />
+                        I am a problem solver who does Engineering not only
+                        to make a living but also as a passion and hobby. <br /><br />
+                        I started my carrier back in 1999 by falling in love with Automation and Programming PLCs. <br />
+                        Since then I have worked on variety of projects from Embedded systems to Desktop and Web Application. <br /><br />
+                        Readability and Scalability are the two main factor for me when I am writing Software or Firmware.
                 </article>
             </section>
             <!-- about ends -->
 
             <!-- education starts -->
-            <div class="education" *ngIf="showEducation">
+
+
+            <div *ngIf="showEducationMaster">
+                    <header>
+                        <h1 class="display-3 text-uppercase">Purdue
+                            <span class="text-success">Univeristy</span>
+                        </h1>
+                    </header>
+                    <p class="EducationFont">Master Degree - Software Engineering 2009 - 2010</p>
+                    <img class="img1" src="../assets/i1.JPG">
+                </div>
+
+                <div *ngIf="showEducationBachelor">
+                        <header>
+    
+                            <h1 class="display-3 text-uppercase">Purdue
+                                <span class="text-success">Univeristy</span>
+                            </h1>
+                        </header>
+                        <p class="EducationFont">Bachelor of Science in Computer Engineering - 2005-2009</p>
+                        <img class="img1" src="../assets/i2.JPG">
+                </div>
+
+           
+
+
+
+
+            <!-- <div class="education" *ngIf="showEducation">
                 <div>
                     <header>
 
@@ -80,7 +113,7 @@
                         <img class="img1" src="../assets/i3.JPG">
                 </div>
                
-            </div>
+            </div> -->
             <!-- education ends -->
 
 

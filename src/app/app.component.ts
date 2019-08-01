@@ -43,13 +43,17 @@ export class AppComponent {
   private bsImage: string ="../assets/i2.JPG"
 
   
-
+  private showEducationMaster: boolean;
+  private showEducationBachelor: boolean;
   private show1999: boolean;
   private show2002: boolean;
   private show2008: boolean;
   private show2010: boolean;
   private show2013: boolean;
   private showGithub: boolean;
+
+  private showNav: boolean;
+  private showNav2: boolean;
 
   private showAbout: boolean;
   private showEducation: boolean;
@@ -86,8 +90,10 @@ export class AppComponent {
   }
 
   ngOnInit() {
-
-    
+    this.showEducationMaster = false;
+    this.showEducationBachelor = false;
+    this.showNav = true;
+    this.showNav2 = false;
     this.currentDate = new Date().toDateString();
     this.siteService.GetWeatherInfo();
     this.interestText = '';
@@ -106,6 +112,13 @@ export class AppComponent {
 
     this.loadAbout();
 
+  }
+
+  backFromEducation(){
+    this.showNav = true;
+    this.showNav2 = false;
+    this.showEducationMaster = false;
+    this.showAbout = true;
   }
 
 
@@ -290,9 +303,35 @@ export class AppComponent {
   }
 
   loadEducation() {
-    this.hideAllSections();
+    //this.hideAllSections();
     this.showEducation = true;
     this.bsImage = "../assets/i2.JPG"
+    this.showNav = false;
+    this.showNav2 = true;
+   
+
+  }
+
+  loadEducation2(educationOption : string) {
+    
+    this.hideAllSections();
+
+    switch(educationOption)
+    {
+      case 'm':{
+        this.showEducationMaster = true;
+        break;
+      }
+
+      case 'b':{
+        this.showEducationBachelor = true;
+        break;
+      }
+
+      case 'c':{
+        break;
+      }
+    }
 
   }
 
@@ -339,6 +378,8 @@ export class AppComponent {
     this.showSkills = false;
     this.showInterests = false;
     this.showContact = false;
+    this.showEducationMaster = false;
+    this.showEducationBachelor = false;
 
   }
 
