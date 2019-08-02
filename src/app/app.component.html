@@ -1,4 +1,3 @@
-
 <div class="container">
 
     <aside>
@@ -7,22 +6,48 @@
             <br><br><span> Orlando Florida</span> <br><br>
             <span> Temp: {{currentTemp}} F</span> </p>
         <img class="myPhoto" src="../assets/kamparsen.jpg" alt="Italian Trulli">
-        <nav  class="nav">
+        <nav class="nav">
             <div *ngIf="showNav">
-                    <button class="navBtn btn-success" (click)="loadAbout()">About</button> <br/>
-                    <button class="navBtn btn-success" (click)="loadEducation()">Education</button><br/>
-                    <button class="navBtn btn-success" (click)="loadExperience()">Experience</button><br/>
-                    <button class="navBtn btn-success" (click)="loadSkills()">Skills</button><br/>
-                    <button class="navBtn btn-success" (click)="loadInterests()">Interests</button><br/>
-                    <button class="navBtn btn-success" (click)="loadContact()">Contact</button> <br/>
+                <button class="navBtn btn-success" (click)="loadAbout()">About</button> <br />
+                <button class="navBtn btn-success" (click)="loadEducation()">Education</button><br />
+                <button class="navBtn btn-success" (click)="loadExperience()">Experience</button><br />
+                <button class="navBtn btn-success" (click)="loadSkills()">Skills</button><br />
+                <button class="navBtn btn-success" (click)="loadInterests()">Interests</button><br />
+                <button class="navBtn btn-success" (click)="loadContact()">Contact</button> <br />
 
             </div>
 
             <div *ngIf="showNav2">
-                    <button class="btn-danger backBtn" (click)="backFromEducation()">Back</button><br/>
-                    <button class="navBtn btn-success" (click)="loadEducation2('m')">Master</button><br/>
-                    <button class="navBtn btn-success" (click)="loadEducation2('b')">Bachelor</button><br/>
-                    <button class="navBtn btn-success" (click)="loadEducation2('c')">Certificates</button><br/><br/><br/>
+                <button class="btn-danger backBtn" (click)="back('ed')">Back</button><br />
+                <button class="navBtn btn-success" [ngClass]="{ 'btn-clicked': buttonClicked, 'btn-notClicked' :  !buttonClicked}"  (click)="showEducation('m')">Master</button><br />
+                <button class="navBtn btn-success" (click)="showEducation('b')">Bachelor</button><br />
+                <button class="navBtn btn-success" (click)="showEducation('c')">Certificates</button><br /><br /><br />
+            </div>
+
+            <div *ngIf="showNav3">
+                <button class="btn-danger backBtn" (click)="back('ex')">Back</button><br />
+                <button class="navBtn btn-success" (click)="ShowExperince('e1')">2013-present</button><br />
+                <button class="navBtn btn-success" (click)="ShowExperince('e2')">2010-2013</button><br />
+                <button class="navBtn btn-success" (click)="ShowExperince('e3')">2008-2010</button><br />
+                <button class="navBtn btn-success" (click)="ShowExperince('e4')">2002-2004</button><br />
+                <button class="navBtn btn-success" (click)="ShowExperince('e5')">1999-2002</button><br /><br /><br />
+            </div>
+
+            <div *ngIf="showNav4">
+                <button class="btn-danger backBtn" (click)="back('sk')">Back</button><br />
+                <button class="navBtn btn-success" (click)="Showskill('s1')">Desktop</button><br />
+                <button class="navBtn btn-success" (click)="Showskill('s2')">Web</button><br />
+                <button class="navBtn btn-success" (click)="Showskill('s3')">Embeded Systems</button><br />
+
+            </div>
+
+            <div *ngIf="showNav5">
+                <button class="btn-danger backBtn" (click)="back('in')">Back</button><br />
+                <button class="navBtn btn-success" (click)="Showinterest('i1')">AI</button><br />
+                <button class="navBtn btn-success" (click)="Showinterest('i2')">Full Stack</button><br />
+                <button class="navBtn btn-success" (click)="Showinterest('i3')">IoT</button><br />
+                <button class="navBtn btn-success" (click)="Showinterest('i4')">Algorithems</button><br />
+
             </div>
         </nav>
     </aside>
@@ -38,349 +63,231 @@
                     </h1>
                 </header>
                 <article class="aboutText">
-                        Thank you for visiting my site! <br /><br />
-                        I am a problem solver who does Engineering not only
-                        to make a living but also as a passion and hobby. <br /><br />
-                        I started my carrier back in 1999 by falling in love with Automation and Programming PLCs. <br />
-                        Since then I have worked on variety of projects from Embedded systems to Desktop and Web Application. <br /><br />
-                        Readability and Scalability are the two main factor for me when I am writing Software or Firmware.
+                    Thank you for visiting my site! <br /><br />
+                    I am a problem solver who does Engineering not only
+                    to make a living but also as a passion and hobby. <br /><br />
+                    I started my carrier back in 1999 by falling in love with Automation and Programming PLCs. <br />
+                    Since then I have worked on variety of projects from Embedded systems to Desktop and Web
+                    Application. <br /><br />
+                    Readability and Scalability are the two main factor for me when I am writing Software or Firmware.
                 </article>
             </section>
             <!-- about ends -->
 
             <!-- education starts -->
-
-
             <div *ngIf="showEducationMaster">
-                    <header>
-                        <h1 class="display-3 text-uppercase">Purdue
-                            <span class="text-success">Univeristy</span>
-                        </h1>
-                    </header>
-                    <p class="EducationFont">Master Degree - Software Engineering 2009 - 2010</p>
-                    <img class="img1" src="../assets/i1.JPG">
-                </div>
+                <header>
+                    <h1 class="display-3 text-uppercase">Purdue
+                        <span class="text-success">Univeristy</span>
+                    </h1>
+                </header>
+                <p class="EducationFont">Master Degree - Software Engineering 2009 - 2010</p>
+                <img class="img2" src="../assets/i1.JPG">
+            </div>
 
-                <div *ngIf="showEducationBachelor">
-                        <header>
-    
-                            <h1 class="display-3 text-uppercase">Purdue
-                                <span class="text-success">Univeristy</span>
-                            </h1>
-                        </header>
-                        <p class="EducationFont">Bachelor of Science in Computer Engineering - 2005-2009</p>
-                        <img class="img1" src="../assets/i2.JPG">
-                </div>
+            <div *ngIf="showEducationBachelor">
+                <header>
+                    <h1 class="display-3 text-uppercase">Purdue
+                        <span class="text-success">Univeristy</span>
+                    </h1>
+                </header>
+                <p class="EducationFont">Bachelor of Science in Computer Engineering - 2005-2009</p>
+                <img class="img2" src="../assets/i2.JPG">
+            </div>
 
-           
-
-
-
-
-            <!-- <div class="education" *ngIf="showEducation">
-                <div>
-                    <header>
-
-                        <h1 class="display-3 text-uppercase">Purdue
-                            <span class="text-success">Univeristy</span>
-                        </h1>
-                    </header>
-                    <p class="EducationFont">Bachelor of Science in Computer Engineering - 2005-2009</p>
-                    <img class="img1" src="../assets/i2.JPG">
-                </div>
-                
-                <hr class="divider">
-                
-                <div>
-                    <header>
-                        <h1 class="display-3 text-uppercase">Purdue
-                            <span class="text-success">Univeristy</span>
-                        </h1>
-                    </header>
-                    <p class="EducationFont">Master Degree - Software Engineering 2009 - 2010</p>
-                    <img class="img1" src="../assets/i1.JPG">
-                </div>
-
-                <hr class="divider">
-
-                <div>
-                        <header>
-                            <h1 class="display-3 text-uppercase">Purdue
-                                <span class="text-success">Univeristy</span>
-                            </h1>
-                        </header>
-                        <p class="EducationFont">Winner of Best Sceinor Design 2009 </p>
-                        <img class="img1" src="../assets/i3.JPG">
-                </div>
-               
-            </div> -->
-            <!-- education ends -->
-
+            <div *ngIf="showEducationCertificate">
+                <header>
+                    <h1 class="display-3 text-uppercase">Purdue
+                        <span class="text-success">Univeristy</span>
+                    </h1>
+                </header>
+                <p class="EducationFont">Winner of Best Sceinor Design 2009 </p>
+                <img class="img2" src="../assets/i3.JPG">
+            </div>
 
             <!-- experince starts -->
 
-            <div  class="experince" *ngIf="showExperience">
-                    <div>
-                        <img class="img1" src="../assets/novaLogo.jpg">
-                        <div class="experinceHeaderFont">Nova Technologies , Orlando FL , 2013- present</div>
-                        <div class="experinceHeaderFont">Title: Software Engineer </div>
-                        <p class="EducationFont">
-                                Design and Development of the next Generation of Call for Fire Trainers.<br /><br />
-                                CFFT III is a Trainer/Simulator Environment designed to Train Joint Fire Observers. <br />
-                                Simulates War Enviroment in a very cost-effective way .<br/><br/>
-                                Developed in WPF Framework with Prism Modules , highley scalable.<br/> 
-                                I have been responsible for the Design and Development of multiple Featuers. <br />
-                                
-                                To name a few modules I worked on : Indirect Fire , Precision Strike, Message Center , Naval Fire 
-                        </p>
-                       
-                    </div>
-                        
-                    <hr class="divider">
+            <div *ngIf="showExperince1">
+                <img class="img1" src="../assets/novaLogo.jpg">
+                <div class="experinceHeaderFont">Nova Technologies , Orlando FL , 2013- present</div>
+                <div class="experinceHeaderFont">Title: Software Engineer </div>
+                <p class="EducationFont">
+                    Design and Development of the next Generation of Call for Fire Trainers.<br /><br />
+                    CFFT III is a Trainer/Simulator Environment designed to Train Joint Fire Observers. <br />
+                    Simulates War Enviroment in a very cost-effective way .<br /><br />
+                    Developed in WPF Framework with Prism Modules , highley scalable.<br />
+                    I have been responsible for the Design and Development of multiple Featuers. <br />
 
-                    <div>
-                            <img class="img2" src="../assets/espnLogo.png">
-                            <div class="experinceHeaderFont">Altura Tech-ESPN  , Orlando FL , 2010- 2013</div>
-                            <div class="experinceHeaderFont">Title: Software Engineer</div>
-                            <p class="EducationFont">
-                                    Sports Statestics Software , Design and Development for ESPN network.<br />
-                                    Distributed sytem with WPF front End and WCF middleware and SQL database<br />
-                            </p>
-                           
-                     </div>
-
-                     <hr class="divider">
-
-                     <div>
-                            <img class="img2" src="../assets/raytheonLogo.jpg">
-                            <div class="experinceHeaderFont">Software Engineer , 2008- 2010</div>
-                            <p class="EducationFont">
-                                    Worked within a large group of Engineers. <br/>
-                                    As a Software Engineer. I was involved in Full cycle of water fall Software Development process.<br />
-                                    Requirment , Design and Implementation for Mission Planner System for V-22 Aircraft<br />
-                            </p>
-                           
-                     </div>
+                    To name a few modules I worked on : Indirect Fire , Precision Strike, Message Center , Naval
+                    Fire
+                </p>
 
             </div>
 
-                
 
-           
+            <div *ngIf="showExperince2">
+                <img class="img1" src="../assets/espnLogo.png">
+                <div class="experinceHeaderFont">Altura Tech-ESPN , Orlando FL , 2010- 2013</div>
+                <div class="experinceHeaderFont">Title: Software Engineer</div>
+                <p class="EducationFont">
+                    Sports Statestics Software , Design and Development for ESPN network.<br />
+                    Distributed sytem with WPF front End and WCF middleware and SQL database<br />
+                </p>
 
+            </div>
 
+            <div *ngIf="showExperince3">
+                <img class="img1" src="../assets/raytheonLogo.jpg">
+                <div class="experinceHeaderFont">Software Engineer , 2008- 2010</div>
+                <p class="EducationFont">
+                    Worked within a large group of Engineers. <br />
+                    As a Software Engineer. I was involved in Full cycle of water fall Software Development
+                    process.<br />
+                    Requirment , Design and Implementation for Mission Planner System for V-22 Aircraft<br />
+                </p>
 
-            <!-- <section class="experince" *ngIf="showExperience">
-                <button class="b b4 btn-success" (click)="Show1999()">1999-2002</button>
-                <button class="b b5 btn-success" (click)="Show2002()">2002-2004</button>
-                <button class="b b6 btn-success" (click)="Show2008()">2008-2010</button>
-                <button class="b b7 btn-success" (click)="Show2010()">2010-2013</button>
-                <button class="b b8 btn-success" (click)="Show2013()">2013-2019</button>
-                <button class="b b9 btn-success" (click)="ShowGithub()">GitHub</button>
+            </div>
 
-                <button *ngIf="show1999 || show2010 || show2008 || show2013" class="prevBtn btn-success"
-                    (click)="prevImage()">Prev</button>
-                <button *ngIf="show1999 || show2010 || show2008 || show2013" class="nextBtn btn-success"
-                    (click)="nextImage()">Next</button>
+            <div *ngIf="showExperince4">
+                <img class="img1" src="../assets/honeywellLogo.png">
+                <div class="experinceHeaderFont">Electrical Engineer , 2002- 2004</div>
+                <p class="EducationFont">
+                    Worked within a small team of Engineers.<br />
+                    BMS system Design , implementation and install in site<br />
+                    for two hospital and one residential building.adaddfgdfgdf
+                </p>
 
+            </div>
 
+            <div *ngIf="showExperince5">
+                <img class="img1" src="../assets/companyLogo.png">
+                <div class="experinceHeaderFont">Electrical Engineer , 1999- 2002</div>
+                <p class="EducationFont">
+                    Electrical Panel design , PLC programming , Robotics and Automation.
+                </p>
 
-                <img *ngIf="show1999" class="companyLogo" src={{companyLogo}}>
-                <div *ngIf="show1999" class="company">Company: <span>{{company}}</span> </div>
-                <div *ngIf="show1999" class="title">Title: <span>{{jobtitle}}</span> </div>
-                <div *ngIf="show1999" class="role">Responsibalities: <span>{{responsibalities}}</span> </div>
-                <img *ngIf="show1999" class="img2" src={{camozziImage}}>
-
-                <img *ngIf="show2002" class="companyLogo" src={{companyLogo}}>
-                <div *ngIf="show2002" class="company">Company: <span>{{company}}</span> </div>
-                <div *ngIf="show2002" class="title">Title: <span>{{jobtitle}}</span> </div>
-                <div *ngIf="show2002" class="role">Responsibalities: <article style="color: rgb(123, 255, 0)">
-                        Worked within a small team of Engineers.<br />
-                        BMS system Design , implementation and install in site<br />
-                        for two hospital and one residential building.
-
-                    </article>
-                </div>
-
-                <img *ngIf="show2008" class="companyLogo" src={{companyLogo}}>
-                <div *ngIf="show2008" class="company">Company: <span>{{company}}</span> </div>
-                <div *ngIf="show2008" class="title">Title: <span>{{jobtitle}}</span> </div>
-                <div *ngIf="show2008" class="role">Responsibalities:
-                        <article style="color: rgb(123, 255, 0)">
-                                Worked within a large group of Engineers. <br/>
-                                As a Software Engineer. I was involved in Full cycle of water fall Software Development process.<br />
-                                Requirment , Design and Implementation for Mission Planner System for V-22 Aircraft<br />
-                               
-        
-                         </article> 
-                </div>
-                <img *ngIf="show2008" class="img2" src={{raytheonImage}}>
-
-                <img *ngIf="show2010" class="companyLogo" src={{companyLogo}}>
-                <div *ngIf="show2010" class="company">Company: <span>{{company}}</span> </div>
-                <div *ngIf="show2010" class="title">Title: <span>{{jobtitle}}</span> </div>
-                <div *ngIf="show2010" class="role">Responsibalities: 
-                        <article style="color: rgb(123, 255, 0)">
-                               Sports Statestics Software , Design and Development for ESPN network.<br />
-                               Distributed sytem with WPF front End and WCF middleware and SQL database<br />
-                        </article>
-                </div>
-                <img *ngIf="show2010" class="img2" src="{{espnImage}}">
-
-
-                <img *ngIf="show2013" class="companyLogo" src={{companyLogo}}>
-                <div *ngIf="show2013" class="company">Company: <span>{{company}}</span> </div>
-                <div *ngIf="show2013" class="title">Title: <span>{{jobtitle}}</span> </div>
-                <div *ngIf="show2013" class="role">Responsibalities: 
-                        <article style="color: rgb(123, 255, 0)">
-                                Design and Development of the next Generation of Call for Fire Trainers.<br />
-                                CFFT III is a Trainer/Simulator Environment designed to Train Joint Fire Observers. <br />
-                                Simulates War Enviroment in a very cost-effective way .<br/><br/>
-                                Developed in WPF Framework with Prism Modules , highley scalable.<br/> 
-                                I have been responsible for the Design and Development of multiple Featuers. <br />
-                                
-                                To name a few modules I worked on : Indirect Fire , Precision Strike, Message Center , Naval Fire 
-
-                         </article>
-                </div>
-                <img *ngIf="show2013" class="img2" src={{novaImage}}>
-
-                <img *ngIf="showGithub" class="companyLogo" src={{companyLogo}}>
-                <div *ngIf="showGithub" class="company">Company: <span>{{company}}</span> </div>
-                <div *ngIf="showGithub" class="title">Title: <span>{{jobtitle}}</span> </div>
-                <div *ngIf="showGithub" class="role">Responsibalities: 
-                        <article style="color: rgb(123, 255, 0)">
-                                I have 20 Repositories in Github .<br />
-                                They are from Web applications to IoT projects. <br />
-                                
-
-                         </article>
-                </div>
-                <img *ngIf="showGithub" class="img2" src={{githubImage}}>
-
-
-            </section> -->
-            <!-- experince ends -->
-
-           
+            </div>
 
 
             <!-- skills starts -->
-            <section class="skills" *ngIf="showSkills">
-                <button class="b b9 btn-primary" (click)="ShowDesktopSkills()">DESKTOP</button>
-                <button class="b b10 btn-danger" (click)="ShowWebSkills()">WEB</button>
-                <button class="b b11 btn-warning" (click)="ShowFirmwareSkills()">HARDWARE</button>
 
-
-                <header *ngIf="showDesktopSkills" class="t1">
-                    <h2 class="display-5 text-uppercase text-success">Programming Languages: <span
-                            class="display-3 text-uppercase text-white"> C , C++ , C# </span></h2>
+            <div class="skills" *ngIf="showSkill1">
+                <header class="t1">
+                    <h2 class="display-6 text-uppercase text-success">Programming Languages: <span
+                            class="display-6 text-uppercase text-white"> C , C++ , C# </span></h2>
                 </header>
 
-                <header *ngIf="showDesktopSkills" class="t2">
-                    <h2 class="display-5 text-uppercase text-success">Markup Languages: <span
-                            class="display-3 text-uppercase text-white">XAML , XML</span></h2>
+                <header class="t2">
+                    <h2 class="display-6 text-uppercase text-success">Markup Languages: <span
+                            class="display-6 text-uppercase text-white">XAML , XML</span></h2>
                 </header>
 
-                <header *ngIf="showDesktopSkills" class="t3">
-                    <h2 class="display-5 text-uppercase text-success">Frameworks , Libraries: <span
-                            class="display-3 text-uppercase text-white">.NET WPF , WCF , PRISM</span></h2>
+                <header class="t3">
+                    <h2 class="display-6 text-uppercase text-success">Frameworks , Libraries: <span
+                            class="display-6 text-uppercase text-white">.NET WPF , WCF , PRISM</span></h2>
                 </header>
 
-                <header *ngIf="showDesktopSkills" class="t4">
-                    <h2 class="display-5 text-uppercase text-success">Design Patterns: <span
-                            class="display-3 text-uppercase text-white">MVVM , Dependency Injection , Command</span>
+                <header class="t4">
+                    <h2 class="display-6 text-uppercase text-success">Design Patterns: <span
+                            class="display-6 text-uppercase text-white">MVVM , Dependency Injection , Command</span>
                     </h2>
                 </header>
 
-                <header *ngIf="showWebSkills" class="t1">
+            </div>
+
+
+            <div class="skills" *ngIf="showSkill2">
+                <header class="t1">
                     <h2 class="display-5 text-uppercase text-success">Client Side: <span
                             class="display-3 text-uppercase text-white"> AngularJs , HTML , CSS , Bootstrap ,<br />
                             Visual Studio Code</span></h2>
                 </header>
 
-                <header *ngIf="showWebSkills" class="t2">
+                <header class="t2">
                     <h2 class="display-5 text-uppercase text-success">Server Side: <span
                             class="display-3 text-uppercase text-white">NodeJS , Express ,RESTfull Services ,
                             Javascript</span></h2>
                 </header>
 
-                <header *ngIf="showWebSkills" class="t3">
+                <header class="t3">
                     <h2 class="display-5 text-uppercase text-success">Database: <span
                             class="display-3 text-uppercase text-white">Mongo DB , Firebase Database</span></h2>
                 </header>
 
-                <header *ngIf="showFirmwareSkills" class="t1">
+            </div>
+
+            <div class="skills" *ngIf="showSkill3">
+                <header class="t1">
                     <h2 class="display-5 text-uppercase text-success">PLC: <span
-                            class="display-3 text-uppercase text-white"> Allen Bradlley , Siemens S7 , Omron
+                            class="display-3 text-uppercase text-white"> Allen
+                            Bradlley , Siemens S7 , Omron
                             <br /></span></h2>
                 </header>
 
-                <header *ngIf="showFirmwareSkills" class="t2">
+                <header class="t2">
                     <h2 class="display-5 text-uppercase text-success">Microcontrollers: <span
                             class="display-3 text-uppercase text-white"> ESP8266 , Arduino ,PIC and Rasberry PI
                             <br /></span></h2>
                 </header>
 
-                <header *ngIf="showFirmwareSkills" class="t3">
+                <header class="t3">
                     <h2 class="display-5 text-uppercase text-success">Fimware: <span
-                            class="display-3 text-uppercase text-white"> C , and Assembely</span></h2>
+                            class="display-3 text-uppercase text-white"> C
+                            , and Assembely</span></h2>
                 </header>
 
-
-
-            </section>
+            </div>
             <!-- skills ends -->
 
-            <!-- interests -->
-            <section class="interests" *ngIf="showInterests">
 
-                <header *ngIf="showInterest1" class="interest1Title">
+            <!-- interests -->
+
+            <div *ngIf="showInterest1">
+                <header class="interest1Title">
                     <h2 class="display-5 text-uppercase text-warning">Arteficial Intellegence</h2>
                 </header>
-                <img *ngIf="showInterest1" class="interestImage" src="../assets/i20.JPG">
-                <article *ngIf="showInterest1" class="interest1Text">I like to Interface with AI to create next
+                <img class="interestImage" src="../assets/i20.JPG">
+                <article class="interest1Text">I like to Interface with AI to create next
                     generation of Apps</article>
 
-                <header *ngIf="showInterest2" class="interest1Title">
+            </div>
+
+            <div *ngIf="showInterest2">
+                <header class="interest1Title">
                     <h2 class="display-5 text-uppercase text-warning">Full Stack Development </h2>
                 </header>
-                <img *ngIf="showInterest2" class="interestImage" src="../assets/i21.JPG">
-                <article *ngIf="showInterest2" class="interest1Text">Like to use NodeJs as my backend RESTfull API and
+                <img class="interestImage" src="../assets/i21.JPG">
+                <article class="interest1Text">Like to use NodeJs as my backend RESTfull API and
                     AngularJs for my front End </article>
 
-                <header *ngIf="showInterest3" class="interest1Title">
+            </div>
+
+            <div *ngIf="showInterest3">
+                <header class="interest1Title">
                     <h2 class="display-5 text-uppercase text-warning">Algorithems and Data Structuer</h2>
                 </header>
-                <img *ngIf="showInterest3" class="interestImage" src="../assets/i22.JPG">
-                <article *ngIf="showInterest3" class="interest1Text">Writing Efficient Algorithems to solve problems is
+                <img class="interestImage" src="../assets/i22.JPG">
+                <article class="interest1Text">Writing Efficient Algorithems to solve problems is
                     my passion. </article>
 
-                <header *ngIf="showInterest4" class="interest1Title">
-                    <h2 class="display-5 text-uppercase text-warning">Microcontrollers and PLCs</h2>
-                </header>
-                <img *ngIf="showInterest4" class="interestImage" src="../assets/i23.JPG">
-                <article *ngIf="showInterest4" class="interest1Text">I started my carrier with Programming PLCs for
-                    Automation lines.<br /></article>
+            </div>
 
-                <header *ngIf="showInterest5" class="interest1Title">
+            <div *ngIf="showInterest4">
+                <header class="interest1Title">
                     <h2 class="display-5 text-uppercase text-warning">IoT - Interet of Things</h2>
                 </header>
-                <img *ngIf="showInterest5" class="interestImage" src="../assets/iot.JPG">
-                <article *ngIf="showInterest5" class="interest1Text">I have done multiple IoT projects and like to
+                <img class="interestImage" src="../assets/iot.JPG">
+                <article class="interest1Text">I have done multiple IoT projects and like to
                     expand my skills on this area.<br /></article>
 
-                <button *ngIf="showInterests" class="interestPrevBtn btn-primary"
-                    (click)="prevInterestImage()">Prev</button>
+            </div>
 
-                <button *ngIf="showInterests" class="interestNextBtn btn-primary"
-                    (click)="nextInterestImage()">Next</button>
-            </section>
             <!-- interests ends -->
 
             <!-- contact -->
-            <section class="contact" *ngIf="showContact">
 
+
+            <div *ngIf="showContact">
                 <header class="contact1">
                     <h2 class="display-5 text-uppercase text-warning">Email : Kamparsen@yahoo.com</h2>
                 </header>
@@ -389,7 +296,9 @@
                     <h2 class="display-5 text-uppercase text-warning">Cell : 407.455.2707</h2>
                 </header>
 
-            </section>
+
+            </div>
+
             <!-- contacts ends -->
 
 

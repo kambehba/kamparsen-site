@@ -78,6 +78,16 @@ aside{
     transform: scale(1.4);
 }
 
+.btn-clicked{
+   border: gold;
+   border-style: groove;
+}
+
+.btn-notClicked{
+    border: none;
+    border-style: unset;
+}
+
 main{
     display: grid;
     grid-template-columns: 300px 1fr;
@@ -85,7 +95,7 @@ main{
 }
 
 .navBtn{
-    width: 100px;
+    width: 150px;
     height: 30px; 
 }
 
@@ -192,6 +202,10 @@ main{
     align-content: center;
 }
 
+.skills{
+    margin: 2rem;
+}
+
 .buttonrow{
     display: grid;
     grid-template-columns: 100px 100px 100px;
@@ -219,9 +233,9 @@ main{
 }
 
 .img1{
-   grid-area: main;
-   width:50%;
-   height: auto;
+   
+   width:400px;
+   height: 200px;
    margin-top: 1rem;
    margin-left: 2rem;
    margin: 2rem;
@@ -230,12 +244,13 @@ main{
 }
 
 .img2{
-    grid-area: main;
-    width:50%;
-    height: 30%;
+    width: 50%;
+    height: 40%;
+  
     margin-top: 1rem;
     margin-left: 2rem;
     margin: 2rem;
+    border: rgb(226, 153, 17) solid 5px;
  
  }
 
@@ -322,16 +337,7 @@ main{
 
 }
 
-.img2{
-    grid-area: main;
-   
-    border: rgb(226, 153, 17) solid 5px;
-    margin-top: 1rem;
-    object-fit:cover;
-    width: 400px;
-    height: 337px;
- 
- }
+
 
  .company{
      grid-area: company;
@@ -495,10 +501,12 @@ main{
 
 .interest1Title{
     grid-area: interest1Title;
+    margin: 2rem;
 }
 
 .interestImage{
     grid-area: interestImage;
+    margin: 2rem;
 }
 
 .interest1Text{
@@ -506,6 +514,7 @@ main{
     font-size: large;
     color: rgb(248, 244, 244);
     font-weight: bold;
+    margin: 2rem;
 }
 
 .interestNextBtn{
@@ -534,11 +543,16 @@ main{
 .contact1{
     grid-area: contact1;
     margin-bottom: 2rem;
+    margin-top: 3rem;
+    margin-left: 2rem;
 
 }
 
 .contact2{
     grid-area: contact2;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+    margin-left: 2rem;
 
 }
 
